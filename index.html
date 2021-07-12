@@ -15,41 +15,49 @@
 <body>
     <section class="header">
         <div class="name">
-            <div class="burger-bar"  id="burgerbar" click=false>
-                <span class='burger' id="burger1"></span>
-                <span class='burger' id="burger2"></span>
-                <span class='burger' id="burger3"></span>
-            </div>
-
             <span class="initials">V</span>ijay 
             <span class="initials">H</span>amal
         </div>
-        <div class="navigation">
-            
-            <div class="menuItems">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#experience">Experiences</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <div class="headerSmall">hamal.vijay@gmail.com</div>
+        <div class="headerSmall">+61-452468331</div>
+        
+    </section>
+        
+        
+    <nav class="sideNav">
+        <div class="burger-bar"  id="burgerbar" click=false>
+            <span class='burger' id="burger1"></span>
+            <span class='burger' id="burger2"></span>
+            <span class='burger' id="burger3"></span>
+        </div>
+        <div class="burger-bar"  id="burgerbarClose" click=false>
+            <div id="burger-close">&times;</div>
+        </div>
+        
+        <a href="#home" ><img src="./assets/images/side_home.png" class="active"></a>
+        <a href="#about"><img src="./assets/images/side_about.png"></a>
+        <a href="#services"><img src="./assets/images/side_service.png"></a>
+        <a href="#experience"><img src="./assets/images/side_experience.png"></a>
+        <a href="#education"><img src="./assets/images/side_education.png"></a>
+        <a href="#contact"><img src="./assets/images/side_contact.png"></a>
+    </nav>
+
+    <div id="home" style="margin-bottom: 60px;"></div>
+
+    <section name="home">
+        <div class="section-wrapper">
+            <div class="home-text">
+                <h1>Welcome<span></span></h1>
+                <h1>to<span></span></h1>
+                <h1>Vijay's profile<span></span></h1>
             </div>
-            
-        </div>        
+            <a href="#contact" class="actionbutton">Contact me</a>
+        </div> 
     </section>
 
-    <!-- <section id="home">
-        <div class="homeImageHolder">
-            <img src="./assets/images/home.png" class="homeImage" alt="">
-            <div class="home-text">
-                <span>Welcome to </span>
-                <span>Vijay's</span>
-                <span>Website</span>
-            </div>
-        </div>        
-    </section> -->
+    <div id="about" style="margin-bottom: 50px;"></div>
 
-    <section id="about">
+    <section name="about">
         <div class="section-wrapper">
             <p class="section-title">
                 Myself
@@ -57,10 +65,17 @@
             <p class="section-description">
                 I am an IT Professional currently working as a Full Stack Developer and Database Administrator at Sonic Healthcare, one of the largest organizations in Australia. I am a self-learner and self-motivated person. I have strong technical and analytical skills along with knowledge of various application and programming packages. I have passion for creating end user interfaces and bringing life to data. I have been working as a professional web and desktop-based applications developer and work on my own free time to explore new updates and technologies.
             </p>
+            <div class="actionButtonHolder">
+                <a class="actionbutton" id="download_resume">Download Resume</a>
+            </div>
+            
+            
         </div>
     </section>
 
-    <section id="services">
+    <div id="services" style="margin-bottom: 50px;"></div>
+
+    <section name="services">
         <div class="section-wrapper">
             <div class="section-title">
                 Services
@@ -71,7 +86,8 @@
                     <div class="card-wrapper">
                         <div class="card">
                             <div class="card-title">
-                            Front-end Development 
+                                <img src="./assets/images/web_light.png" class="card-icon">
+                                <div class="card-title-text">Front-end Development</div> 
                             </div>
                             <div class="card-description">
                                 I have been involved in designing many web and desktop based application interfaces. My expertise are HTML, CSS, JavaScript, jQuery, pHp, Angular, AJAX and extends to JAVAFx and C# for application interface design.
@@ -82,7 +98,8 @@
                     <div class="card-wrapper">
                         <div class="card">
                             <div class="card-title">
-                            Back-end Development 
+                                <img src="./assets/images/code_light.png" class="card-icon">
+                                <div class="card-title-text">Back-end Development</div>                             
                             </div>
                             <div class="card-description">
                                 I can create APIs to handle data flow to and from the databases. I have successfully deployed numerous REST APIs used internally for the applications I developed for my current company. Database design and optimization also falls under my expertise.
@@ -95,7 +112,8 @@
                     <div class="card-wrapper">
                         <div class="card">
                             <div class="card-title">
-                            Database Services 
+                                <img src="./assets/images/database_light.png" class="card-icon">
+                                <div class="card-title-text">Database Services</div>                            
                             </div>
                             <div class="card-description">
                                 SQL SERVER and MySQL are, but not limited to, my database expertise. I have been working as a TSQL developer, creating views, functions and stored procedures, maximizing efficiency and security at database level for the company.
@@ -106,7 +124,8 @@
                     <div class="card-wrapper">
                         <div class="card">
                             <div class="card-title">
-                            Other Services 
+                                <img src="./assets/images/excel_light.png" class="card-icon">
+                                <div class="card-title-text">Other Services</div>                             
                             </div>
                             <div class="card-description">
                                 Some other services include VB programming for EXCEL, Power BI, SSRS, SSIS. I have also programmed within Crystal Reporting package for automated data handling and numerous process automation along with Visual Cut. 
@@ -118,16 +137,27 @@
         </div>
     </section>
 
-    <section id="experience">
+    
+    <div id="experience" style="margin-bottom: 50px;"></div>
+
+
+    <section name="experience">
         <div class="section-wrapper">
             <div class="section-title">
                 Experiences
-            </div> 
+            </div>
             <div class="tab">
-                <div class="tab-title">
-                    <span class="tab-name active">Professional</span>
-                    <span class="tab-name">Other</span>
+                <div class="folder-container">
+                    <div class="folder folder-active" name="Professional">
+                        <img src="./assets/images/folder.png" alt="" class="folder-icon">
+                        <span class="folder-name ">Professional</span>
+                    </div> 
+                    <div class="folder" name="Other">
+                        <img src="./assets/images/folder.png" alt="" class="folder-icon">
+                        <span class="folder-name ">Other</span>
+                    </div>                        
                 </div>
+
                 <div class="tab-body">
                     <div class="tab-wrapper active" id="Professional">
                         <div class="tab-card">
@@ -176,26 +206,37 @@
                                 </p>
                             </div>
                             
-                            </div>
                         </div>
                     </div>
-                </div> 
-            </div>               
-        </div>       
+                </div>
+            </div> 
+        </div>               
+       
     </section>
 
+    <div id="education" style="margin-bottom: 50px;"></div>
 
-    <section id="education">
+    <section name="education">
         <div class="section-wrapper">
             <div class="section-title">
                 Education
             </div> 
             <div class="tab">
-                <div class="tab-title">
-                    <span class="tab-name active">Research</span>
-                    <span class="tab-name">Post-Graduate</span>
-                    <span class="tab-name">Under-Graduate</span>
+
+
+                <div class="folder-container">
+                    <div class="folder folder-active" name="Research">
+                        <img src="./assets/images/folder.png" alt="" class="folder-icon">
+                        <span class="folder-name ">Research</span>
+                    </div> 
+                    <div class="folder" name="Post-Graduate">
+                        <img src="./assets/images/folder.png" alt="" class="folder-icon">
+                        <span class="folder-name ">Post Graduate</span>
+                    </div>                        
                 </div>
+
+
+                
                 <div class="tab-body">
                     <div class="tab-wrapper active" id="Research">
                         <div class="tab-card">
@@ -234,28 +275,16 @@
                         </div>
                     </div>
 
-                    <div class="tab-wrapper inactive" id="Under-Graduate">
-                        <div class="tab-card">
-                            <div class="tab-card-title">
-                                Bachelors in Pharmacy
-                            </div>
-                            <div class="tab-card-description">
-                                <p class="company">Kathmandu University</p>
-                                <p class="location">Dhulikhel, Nepal</p>
-                                <p class="duration">2008-2012</p>
-                                <p class="information">
-                                    <strong>Pharmaceutical Sciences</strong>                                                                          
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>                
         </div>
     </section>
 
-    <section id="contact">
+
+    <div id="contact" style="margin-bottom: 50px;"></div>
+
+
+    <section name="contact">
         <div class="section-wrapper">
             <div class="section-title">
                 Contact
@@ -341,18 +370,31 @@
     $(document).ready(function(){
         
         $("#burgerbar").click(function(){
-            var click = $(this).attr("click");
-            console.log(click);
-            if(click == "false"){
-                $(".menuItems").css("display","block");
-                $(".menuItems").css("transition","0.3s ease");
-                $(this).attr("click", "true");
-            }
-            else{
-                $(".menuItems").css("display","flex");
-                $(this).attr("click", "false");
-            }            
+            $(this).css("display", "none");
+            $("#burger-close").css("display", "flex");
+            $(".sideNav").css("height","100vh");
+            $("section").css("margin-left", "60px");
+            $("section").css("width",$(window).width()-60);         
+            $(this).attr("click", "true");
+                
+            })
+        $("#burger-close").click(function(){
+            $(this).css("display", "none");
+            $("#burgerbar").css("display", "block");
+            $(".sideNav").css("height","50px");
+            $("section").css("margin-left", "0");
+            $("section").css("width","100%");
+            $(this).attr("click", "false");
+                
+            
+        })
 
+        //sidenav
+        $(".sideNav").on("click", "img", function(){
+            $(this).parent().parent().find("a").find("img").each(function(){
+                $(this).removeClass("active");
+            })
+            $(this).addClass("active");
         })
 
         $(".tab-name").click(function(){
@@ -376,6 +418,49 @@
                     $(this).addClass("active");
                 }
             })
+        })
+
+        $(".folder").click(function(){
+            var folderName = $(this).attr("name");
+
+            $(this).parent().find("div").each(function(){
+                if($(this).attr("name") != folderName){
+                    $(this).removeClass("folder-active");
+                }
+                else{
+                    $(this).addClass("folder-active");
+                }
+            })
+
+            $(this).parent().parent().find(".tab-body").find(".tab-wrapper").each(function(){
+                if($(this).attr("id") != folderName){
+                    $(this).removeClass("active");
+                    $(this).addClass("inactive");
+                }
+                else{
+                    $(this).removeClass("inactive");
+                    $(this).addClass("active");
+                }
+            })
+        })
+
+        //download resume
+        $('#download_resume').click(function(){
+            fetch('resume/VijayHamalResume.pdf')
+                .then(resp => resp.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    // the filename I want
+                    a.download = 'VijayHamalResume.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    alert('Resume has been downloaded.'); 
+                })
+                .catch(() => alert('Error Occured while downloading. Please email to hamal.vijay@gmail.com for resume or contact via one of the options given in the profile.'));
         })
 
         
