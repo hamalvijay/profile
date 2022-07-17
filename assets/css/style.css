@@ -1,0 +1,122 @@
+@import 'bootstrap.min.css';
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 2px;
+    }
+    
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+    border-radius: 10px;
+    }
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    }
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    }
+
+    
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .hover:hover{
+        cursor: pointer;
+    }
+    
+    .section-header{
+        opacity : 0.8;
+        padding: 10px;
+    }
+
+    .icon{
+        height : 50px;
+        width : 50px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+
+    .icon-sm{
+        height : 20px !important;
+        width: 20px !important;
+    }
+
+    .rotate90{
+        transform: rotate(90deg);
+    }
+    .rotate180{
+        transform: rotate(180deg);
+    }
+    .rotate270{
+        transform: rotate(270deg);
+    }
+
+    .relative{
+        position: relative;
+    }
+
+    .absolute{
+        position : absolute;
+    }
+
+    .card-icon{
+        height: 20px;
+        width: 20px;
+        border: 1px solid var(--info);
+        border-radius: 50%;
+        top: 0px;
+        left: -10px;
+    }
+
+    .side-nav{
+        background: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3));
+        height:0px;
+        width: 80px;
+        position: fixed;
+        z-index: 10;
+    }
+
+    .side-nav.navActive{
+        height:100vh;
+        width: 100vw;
+    }
+
+    .side-nav-toggle{
+        top:20px;
+        left: 20px;
+        height:40px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 20;
+    }
+    .side-nav-toggle .bar{
+        height: 5px;
+        width : 100%;
+        border-radius: 10px;
+    }
+
+    .side-nav-content{
+        display:none;
+    }
+    .side-nav-content.show{
+        display:flex;
+        flex-direction: row;
+        width : 250px;
+    }
+
+    .intro{
+        height: 100vh;
+        width : 300px;
+    }
+
+    

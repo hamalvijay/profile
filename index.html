@@ -1,535 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website Name</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <script src="assets/js/jquery.slim.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-    <title>Vijay Hamal</title>
-
-    <script src="bootstrap.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="bootstrap.css" />
-    <link rel="icon" href="favicon.png" />
-    <link rel="stylesheet" href="style.css" />
   </head>
+  <body >
+    <!--Navbar-->
+    <!-- <nav class="navbar bg-info text-white sticky-top">
+        <div class="brand-title"></div>
+        <a id="navbar-toggleButton" class="toggle-button">
+            <span class="bar bar-1 bg-white"></span>
+            <span class="bar bar-2 bg-white"></span>
+            <span class="bar bar-3 bg-white"></span>
 
-  <body>
-    <!-- ======= Mobile nav toggle button ======= -->
-    <i class="bi bi-list mobile-nav-toggle d-xl-none text-warning"></i>
-    <!-- ======= Header ======= -->
-    <header id="header" class="d-flex flex-column justify-content-center">
-      <nav id="navbar" class="navbar nav-menu">
-        <ul>
-          <li>
-            <a href="#hero" class="nav-link scrollto active"
-              ><i class="bi bi-house-door-fill"></i> <span>Home</span></a
-            >
-          </li>
-          <li>
-            <a href="#about" class="nav-link scrollto"
-              ><i class="bi bi-person-fill"></i> <span>About</span></a
-            >
-          </li>
-          <li>
-            <a href="#skills" class="nav-link scrollto"
-              ><i class="bi bi-info"></i> <span>Skills</span></a
-            >
-          </li>
-          <li>
-            <a href="#resume" class="nav-link scrollto"
-              ><i class="bi bi-file-earmark-fill"></i> <span>Resume</span></a
-            >
-          </li>
-          <li>
-            <a href="#services" class="nav-link scrollto"
-              ><i class="bi bi-server"></i> <span>Services</span></a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="nav-link scrollto"
-              ><i class="bi bi-envelope"></i> <span>Contact</span></a
-            >
-          </li>
-        </ul>
-      </nav>
-      <!-- .nav-menu -->
-    </header>
-    <!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section
-      id="hero"
-      class="d-flex flex-column justify-content-center blue-gradient"
-    >
-      <div class="container opacity-80">
-        <h1>Vijay Hamal</h1>
-        <p>Application Developer</p>
-        <div class="social-links">
-          <a href="mailto:hamal.vijay@gmail.com"
-            ><i class="bi bi-envelope-fill"></i
-          ></a>
-          <a href="https://www.linkedin.com/in/vijayhamal/" target="_blank"
-            ><i class="bi bi-linkedin"></i
-          ></a>
+        </a>
+        <div class="navbar-links">
+            <ul >
+                <li ><a href="#" class=" text-white">Home</a></li>
+                <li><a href="#about" class=" text-white">About</a></li>
+                <li><a href="#skills" class=" text-white">Skills</a></li>
+                <li><a href="#resume" class=" text-white">Resume</a></li>
+                <li><a href="#services" class=" text-white">Services</a></li>
+                <li><a href="#contact" class=" text-white">Contact</a></li>
+            </ul>
         </div>
-      </div>
+    </nav> -->
+
+    <section  class="container-fluid mb-3 side-nav absolute ">
+            <a class="side-nav-toggle bg-info p-2 absolute hover">
+                <input id="toggleCheck" type="checkbox" style="display:none">
+                <span class="bar bg-white"></span>
+                <span class="bar bg-white"></span>
+                <span class="bar bg-white"></span>
+            </a>
+            <div class="row side-nav-content">
+                <div class="col intro text-dark text-center">
+                    <div class="d-flex flex-column flex-wrap  justify-content-center h-100">
+
+                        <a class="m-1 row p-2 rounded bg-white text-info text-decoration-none font-weight-bold" href="#" >
+                            <div class="col-3">
+                                <img src="assets/icons/home_info.png" class="icon icon-sm mr-2">
+                            </div>
+                            <div class="col-9 text-left">Home</div>
+                        </a>
+
+                        <a class="m-1 row p-2 rounded bg-white text-info text-decoration-none font-weight-bold" href="#about" >
+                            <div class="col-3">
+                                <img src="assets/icons/user_info.png" class="icon icon-sm mr-2">
+                            </div>
+                            <div class="col-9 text-left">About</div>
+                        </a>
+
+                        <a class="m-1 row p-2 rounded bg-white text-info text-decoration-none font-weight-bold" href="#skills" >
+                            <div class="col-3">
+                                <img src="assets/icons/info_info.png" class="icon icon-sm mr-2">
+                            </div>
+                            <div class="col-9 text-left">Skills</div>
+                        </a>
+
+                        <a class="m-1 row p-2 rounded bg-white text-info text-decoration-none font-weight-bold" href="#resume" >
+                            <div class="col-3">
+                                <img src="assets/icons/copy_info.png" class="icon icon-sm mr-2">
+                            </div>
+                            <div class="col-9 text-left">Resume</div>
+                        </a>
+
+                        <a class="m-1 row p-2 rounded bg-white text-info text-decoration-none font-weight-bold" href="#services" >
+                            <div class="col-3">
+                                <img src="assets/icons/database_info.png" class="icon icon-sm mr-2">
+                            </div>
+                            <div class="col-9 text-left">Services</div>
+                        </a>
+
+                        <a class="m-1 row p-2 rounded bg-white text-info text-decoration-none font-weight-bold" href="#contact" >
+                            <div class="col-3">
+                                <img src="assets/icons/mail_info.png" class="icon icon-sm mr-2">
+                            </div>
+                            <div class="col-9 text-left">Contact</div>
+                        </a>
+                    </div>
+
+                    
+                </div>
+            </div>       
     </section>
-    <!-- End Hero -->
 
-    <main id="main">
-      <!-- ======= About Section ======= -->
-      <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title section-grey">
-            <h2>About</h2>
-            <div class="row">
-              <div class="col-lg-3">
-                <img src="vijay.jpg" class="img-thumbnail" alt="Vijay Hamal" />
-              </div>
-              <div class="col-lg-1">&nbsp;&nbsp;</div>
-              <div class="col-lg-8">
-                <p>
-                  I am an IT Professional currently working as a
-                  <strong>Senior Software Developer</strong> at Sonic IT, Sonic
-                  Healthcare, one of the largest organisations in Australia.
-                </p>
-                <p>
-                  I am a self-learner and self-motivated person. I have strong
-                  technical and analytical skills along with knowledge of
-                  various application and programming packages. I have passion
-                  for creating end user interfaces and bringing life to data.
-                </p>
-                <p>
-                  I have been working as a professional web and desktop-based
-                  applications developer and work on my own free time to explore
-                  new updates and technologies.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
-
-      <!-- ======= Skills Section ======= -->
-      <section id="skills" class="skills section-bg blue-gradient text-white">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title text-white">
-            <h2>Skills</h2>
-            <p>App Development</p>
-          </div>
-
-          <div class="row skills-content text-white opacity-80">
-            <div class="col-lg-6">
-              <div class="progress">
-                <span class="skill">angular, javafx</span>
-              </div>
-              <div class="progress">
-                <span class="skill">C#, .net CORE, JAVA, PHP, REST</span>
-              </div>
-              <div class="progress">
-                <span class="skill">HTML, CSS, JAVASCRIPT, JQUERY, AJAX</span>
-              </div>
-              <div class="progress">
-                <span class="skill"
-                  >SQL SERVER, MySQL, TSQL, VB, EXCEL, PowerBI, SSRS, SSIS,
-                  Crystal Reporting, Visual Cut</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Skills Section -->
-
-      <!-- ======= Resume Section ======= -->
-      <section id="resume" class="resume">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title section-grey">
-            <h2>Resume</h2>
-            <p>Web/Desktop based application developer</p>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-6">
-              <h3 class="resume-title">Sumary</h3>
-              <div class="resume-item pb-0">
-                <h4>Vijay Hamal</h4>
-                <p>
-                  <em
-                    >Experienced and innovative full stack application developer
-                    with 4+ years of experience designing and developing
-                    user-centered web and desktop applications.</em
-                  >
-                </p>
-                <ul>
-                  <li>Sydney, NSW, Australia</li>
-                  <li>+61-452468331</li>
-                  <li>hamal.vijay@gmail.com</li>
-                </ul>
-              </div>
-
-              <h3 class="resume-title">Education</h3>
-
-              <div class="resume-item">
-                <h4>Research</h4>
-                <h5>Sep 2019 – Ongoing</h5>
-                <p><em>Central Queensland University, Sydney</em></p>
-                <p>
-                  Data Analytics – ANALYSIS OF WEBSITE USAGE STATISTICS TO
-                  ASSESS ENGAGEMENT WITH AND EFFECTIVENESS OF A
-                  COMPUTER-TAILORED PHYSICAL ACTIVITY INTERVENTION IN A 3-GROUP
-                  RCT.
-                </p>
-              </div>
-
-              <div class="resume-item">
-                <h4>Masters of Information Technology</h4>
-                <h5>Nov 2015-Jul 2017</h5>
-                <p><em>Charles Sturt University, Sydney</em></p>
-                <p>
-                  Key Achievements: Academic Excellence Award with High
-                  Distinction Area of Study: Database Systems (RDBMS), SDLC, Web
-                  Development, Project Management, System Analysis, Interface
-                  Usability, Programming Languages (Python, JAVA), HTML and CSS,
-                  JavaScript
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3 class="resume-title">Professional Experience</h3>
-              <div class="resume-item">
-                <h4>Senior Software Developer</h4>
-                <h5>Jan 2022 - Present</h5>
-                <p>
-                  <em>Sonic IT, Sonic Healthcare, Sydney, NSW, Australia </em>
-                </p>
-                <ul>
-                  <li>
-                    Application Development
-                    <ul>
-                      <li>
-                        Front end development
-                        <ul>
-                          <li>Angular</li>
-                        </ul>
-                      </li>
-                      <li>
-                        Back end Development
-                        <ul>
-                          <li>Intersystems Cache, REST API</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Database
-                    <ul>
-                      <li>Intersystems Cache and SQL</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Summary
-                    <ul>
-                      <li>
-                        Design and implement system design for creating
-                        applications required within the business
-                      </li>
-                      <li>Create data flow and data transformation logic</li>
-                      <li>
-                        Liaise with the project stakeholder and programming team
-                        to ensure proper communication is relayed and
-                        application development integrity is maintained
-                      </li>
-                      <li>
-                        Build and suggest on Angular based front end application
-                        development
-                      </li>
-                      <li>
-                        Build REST API required for the front-end developers
-                      </li>
-                      <li>Update and maintain documentations</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="resume-item">
-                <h4>Application Developer</h4>
-                <h5>Nov 2017 - Jan 2022</h5>
-                <p>
-                  <em
-                    >Douglass Hanly Moir Pathology, Sydney, NSW, Australia
-                  </em>
-                </p>
-                <ul>
-                  <li>
-                    Application Development
-                    <ul>
-                      <li>
-                        Desktop Application
-                        <ul>
-                          <li>JAVA, Python</li>
-                        </ul>
-                      </li>
-                      <li>
-                        Full Stack Web Application
-                        <ul>
-                          <li>Angular</li>
-                          <li>C#, .net Core</li>
-                          <li>REST Api</li>
-                          <li>VB</li>
-                          <li>PHP, JAVA</li>
-                          <li>
-                            HTML, CSS, AJAX, JQUERY, JavaScript, Bootstrap
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    SQL Development and DBA
-                    <ul>
-                      <li>SQL Server, MySQL</li>
-                      <li>T-SQL, SSIS, SSRS, SSMS, ETL</li>
-                      <li>PowerBI, Tableau</li>
-                      <li>Crystal Report</li>
-                      <li>MS-EXCEL, Pivot Tables, Power Query</li>
-                      <li>VBA</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Summary
-                    <ul>
-                      <li>
-                        Create end-user applications, both front end GUI (web
-                        and desktop based) and API
-                      </li>
-                      <li>Manage data flow and storage</li>
-                      <li>
-                        Design SQL database and implement TSQL for automation,
-                        data security and integrity
-                      </li>
-                      <li>Create real-time reporting and dashboard packages</li>
-                      <li>
-                        Create automated Visual Basic codes for EXCEL
-                        automations
-                      </li>
-                      <li>Create SharePoint workflow (Nintex)</li>
-                      <li>
-                        Maintain and update company's internet and intranet
-                        sites
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Description
-                    <ul>
-                      <li>
-                        Review and interpret project specifications and
-                        technical designs, communicating enquiries to the
-                        application development and deployment team
-                      </li>
-                      <li>
-                        Write programming code to develop, maintain and update
-                        applications for internal use via various programming
-                        platforms
-                      </li>
-                      <li>
-                        Develop and implement functional improvements and
-                        maintain structure, security, workflows and forms on
-                        company's intranet
-                      </li>
-                      <li>
-                        Research, evaluate and determine resources for end-use
-                        application need, while developing applications
-                      </li>
-                      <li>
-                        Research and analyse existing software and applications
-                        used within the company, identifying deficiencies in the
-                        existing system and developing applications to resolve
-                        those deficiencies
-                      </li>
-                      <li>
-                        Develop and design SQL databases for applications and
-                        acting as T-SQL programmer
-                      </li>
-                      <li>Regularly update and maintain company websites</li>
-                      <li>
-                        Continuously test, debug and upgrade existing
-                        applications and program for better user experience and
-                        to meeting the organization’s needs
-                      </li>
-                      <li>
-                        Create end-user manuals, program documentation,
-                        operational documentation, change documentation and
-                        training documentation
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Resume Section -->
-
-      <!-- ======= Services Section ======= -->
-      <section id="services" class="services blue-gradient">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title text-white opacity-80">
-            <h2>Services</h2>
-            <p>A full stack service related to any application development</p>
-          </div>
-
-          <div class="row opacity-80">
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
-              <div class="icon-box iconbox-yellow">
-                <div class="icon">
-                  <i class="bi bi-globe"></i>
-                </div>
-                <h4>FRONT END DEVELOPMENT</h4>
-                <p>
-                  I have been involved in designing many web and desktop based
-                  application interfaces. My expertise are ANGULAR, Bootstrap,
-                  HTML, CSS, JavaScript, jQuery, pHp, Angular, AJAX and extends
-                  to JAVAFx and C# for application interface design.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
-              <div class="icon-box iconbox-yellow">
-                <div class="icon">
-                  <i class="bi bi-code-slash"></i>
-                </div>
-                <h4>BACK END DEVELOPMENT</h4>
-                <p>
-                  I can create APIs to handle data flow to and from the
-                  databases. I have successfully deployed numerous REST APIs
-                  used internally for the applications I developed for the
-                  company. The expertise includes, but is not limited to C#,
-                  .net Core, and Intersystems Cache. Database design and
-                  optimization also falls under my expertise.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
-              <div class="icon-box iconbox-red">
-                <div class="icon">
-                  <i class="bi bi-list"></i>
-                </div>
-                <h4>DATABASE SERVICES</h4>
-                <p>
-                  SQL SERVER and MySQL are, but not limited to, my database
-                  expertise. I have been working as a TSQL developer, creating
-                  views, functions and stored procedures, maximizing efficiency
-                  and security at database level for the company. I also work on
-                  Intersystems Cache database.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-2">
-              <div class="icon-box iconbox-teal">
-                <div class="icon">
-                  <i class="bi bi-cpu"></i>
-                </div>
-                <h4>OTHER SERVICES</h4>
-                <p>
-                  Some other services include VB programming for EXCEL, Power
-                  BI, SSRS, SSIS. I have also programmed within Crystal
-                  Reporting package for automated data handling and numerous
-                  process automation along with Visual Cut.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Services Section -->
-
-      <!-- ======= Contact Section ======= -->
-      <section id="contact" class="contact mb-5">
-        <div class="container mb-5">
-          <div class="section-title">
-            <h2>Contact</h2>
-          </div>
-
-          <div class="row text-center mt-1">
-            <div class="col-lg-6 col-md-6">
-              <div class="row">
-                <div class="address col-lg-6 col-md-12">
-                  <div class="d-flex justify-content-start">
-                    <h4><i class="bi bi-geo-alt-fill p-2"></i></h4>
-                    <p>Sydney, NSW, Australia</p>
+    <!--intro-->
+    <section id="#" class="container-fluid mb-3 opacity-50">
+        <div class="row bg-info">
+            <div class="col intro text-white text-center">
+                <div class="d-flex flex-column flex-wrap align-content-center justify-content-center h-100">
+                    <h1 class="display-1 font-weight-bold p-3">Vijay Hamal</h1>
+                    <h2 class="font-weight-bold p-3">Senior Software Engineer</h2>
+                    <div class="d-flex flex-row justify-content-center ">
+                        <a class="p-2"  href="mailto:hamal.vijay@gmail.com">
+                            <img src="assets/icons/mail_white.png" class="card-img-top icon icon-sm" alt="Email">
+                        </a>                        
+                        <a class="p-2" href="https://www.linkedin.com/in/vijayhamal/" target="_blank">                            
+                            <img src="assets/icons/linkedin_white.png" class="card-img-top icon icon-sm" alt="Linkedin"> 
+                        </a>
+                    </div>
                   </div>
-                </div>
-                <div class="email col-lg-6 col-md-12">
-                  <div class="d-flex justify-content-start">
-                    <h4><i class="bi bi-envelope-fill p-2"></i></h4>
-                    <p>
-                      <a href="mailto:hamal.vijay@gmail.com"
-                        >hamal.vijay@gmail.com</a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-              <div class="row">
-                <div class="phone col-lg-6 col-md-12">
-                  <div class="d-flex justify-content-start">
-                    <h4><i class="bi bi-phone-fill p-2"></i></h4>
-                    <p>+61-450789594</p>
-                  </div>
+        </div>
+        
+    </section>
+    
+    <!--About-->
+    <section id="about" class="container-fluid mt-3 mb-3 opacity-50">
+        <div class="row align-items-start">
+            
+             <div class="col px-5 py-2">
+                <div class="row">
+                    <div class="col-sm-1 col-md-3 col-lg-4"></div>
+                    <div class="col-sm-10  col-md-6 col-lg-4">
+                        <div class="section-header  text-center  ml-auto mr-auto">
+                            <h3 class="title  border-bottom p-3">About</h3>
+                            <h5 class="sub-title p-3">Senior Software Engineer </h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-1  col-md-3 col-lg-4"></div>
                 </div>
-                <div class="linkedin col-lg-6 col-md-12">
-                  <div class="d-flex justify-content-start">
-                    <h4><i class="bi bi-linkedin p-2"></i></h4>
-                    <p>
-                      <a
-                        href="https://www.linkedin.com/in/vijayhamal/"
-                        target="_blank"
-                        >Vijay Hamal</a
-                      >
-                    </p>
-                  </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-4">
+                        <img class="img-thumbnail" src="assets/images/profile.jpg"> 
+                     </div>
+                     <div class="col-md-12 col-lg-8">
+                        <div class="text-justify">
+                            <p>
+                                I am an IT Professional currently working as a Senior Software Engineer at Sonic IT, Sonic Healthcare, one of the largest organisations in Australia.
+                            </p>
+                            <p>
+                                I am a self-learner and self-motivated person. I have strong technical and analytical skills along with knowledge of various application and programming packages. I have passion for creating end user interfaces and bringing life to data.
+                            </p>
+                            <p>
+                                I have been working as a professional web and desktop-based applications developer and work on my own free time to explore new updates and technologies.
+                            </p>
+                        </div>                 
+                     </div>
+                    
+                </div>                 
+             </div>
+        </div>
+        
+    </section>
+
+
+    <!--Skills-->
+    <section id="skills" class="container-fluid bg-info text-white mt-3 mb-3 ">
+        <div class="row align-items-start">
+            
+             <div class="col px-5 py-2">
+                <div class="row">
+                    <div class="col-sm-1 col-md-3 col-lg-4"></div>
+                    <div class="col-sm-10  col-md-6 col-lg-4">
+                        <div class="section-header  text-center  ml-auto mr-auto">
+                            <h3 class="title  border-bottom p-3">Skills</h3>
+                            <h5 class="sub-title p-3">App Development</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-1  col-md-3 col-lg-4"></div>
                 </div>
-              </div>
+                <div class="mt-3 text-justify">
+                    <p>ANGULAR, JAVAFX</p>
+                    <p>C#, .NET CORE, JAVA, PHP, REST</p>
+                    <p>HTML, CSS, JAVASCRIPT, JQUERY, AJAX</p>
+                    <p>SQL SERVER, MYSQL, TSQL, VB, EXCEL, POWERBI, SSRS, SSIS, CRYSTAL REPORTING, VISUAL CUT</p>
+                    
+                </div>                 
+             </div>
+        </div>
+        
+    </section>
+
+    <!--Resume-->
+    <section id="resume" class="container-fluid mt-3 mb-3">
+        <div class="row align-items-start">
+            
+             <div class="col px-5 py-2">
+                <div class="row">
+                    <div class="col-sm-1 col-md-3 col-lg-4"></div>
+                    <div class="col-sm-10  col-md-6 col-lg-4">
+                        <div class="section-header  text-center  ml-auto mr-auto">
+                            <h3 class="title  border-bottom p-3">Resume</h3>
+                            <h5 class="sub-title p-3">Web/Desktop based application developer</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-1  col-md-3 col-lg-4"></div>
+                </div>
+                <div class="mt-3 row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="p-2">
+                            <h2>Summary</h2>
+                            <div class="border rounded-0 border-info border-right-0 border-top-0 border-bottom-0  m-2">
+                                <div class="card border-0 relative"> 
+                                    <div class="absolute card-icon bg-white  border-info"></div>                           
+                                    <div class="card-body">
+                                      <h4 class="card-title text-info font-weight-bold">VIJAY HAMAL</h4>
+                                      <p class="card-title px-3 font-weight-bold bg-light"></p>
+                                      <div class="card-text">
+                                        <p class="font-italic">Experienced and innovative full stack application developer with 4+ years of experience designing and developing user-centered web and desktop applications.</p>
+                                        <p>Sydney, NSW, Australia</p>
+                                        <p>+61-452468331</p>
+                                        <p>hamal.vijay@gmail.com</p>
+                                      </div>
+                                    </div>
+                                </div>                                
+                            </div>                            
+                        </div>
+
+                        <div class="p-2">
+                            <h2>Education</h2>
+                            <div class="border rounded-0 border-info border-right-0 border-top-0 border-bottom-0  m-2">
+                                <div class="card border-0 relative"> 
+                                    <div class="absolute card-icon bg-white  border-info"></div>                             
+                                    <div class="card-body">
+                                      <h4 class="card-title text-info font-weight-bold">RESEARCH</h4>
+                                      <p class="card-title px-3 font-weight-bold bg-light">Sep 2019 - Ongoing</p>
+                                      <div class="card-text">
+                                            <p class="font-italic">Central Queensland University, Sydney</p>
+                                            <p>Data Analytics – ANALYSIS OF WEBSITE USAGE STATISTICS TO ASSESS ENGAGEMENT WITH AND EFFECTIVENESS OF A COMPUTER-TAILORED PHYSICAL ACTIVITY INTERVENTION IN A 3-GROUP RCT.</p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="card border-0 relative"> 
+                                    <div class="absolute card-icon bg-white  border-info"></div>                             
+                                    <div class="card-body">
+                                      <h4 class="card-title text-info font-weight-bold">MASTERS OF INFORMATION TECHNOLOGY</h4>
+                                      <p class="card-title px-3 font-weight-bold bg-light">Nov 2015 - Jul 201</p>
+                                      <div class="card-text">
+                                            <p class="font-italic">Charles Sturt University, Sydney</p>
+                                            <p>Key Achievements: Academic Excellence Award with High Distinction Area of Study: Database Systems (RDBMS), SDLC, Web Development, Project Management, System Analysis, Interface Usability, Programming Languages (Python, JAVA), HTML and CSS, JavaScript</p>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="p-2">
+                            <h2>Professional Experience</h2>
+                            <div class="border rounded-0 border-info border-right-0 border-top-0 border-bottom-0  m-2">
+                                <div class="card border-0 relative"> 
+                                    <div class="absolute card-icon bg-white  border-info"></div>                            
+                                    <div class="card-body">
+                                      <h4 class="card-title text-info font-weight-bold">SENIOR SOFTWARE DEVELOPER</h4>
+                                      <p class="card-title px-3 font-weight-bold bg-light">Jan 2022 - Present</p>
+                                      <div class="card-text">
+                                        <p class="font-italic">Sonic IT, Sonic Healthcare, Sydney, NSW, Australia</p>
+                                            <ul>
+                                                <li>
+                                                    Application Development
+                                                    <ul>
+                                                        <li>
+                                                            Front end Development
+                                                            <ul>
+                                                                <li>
+                                                                    Angular
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            Back end Development
+                                                            <ul>
+                                                                <li>
+                                                                    Intersystems Cache, REST API
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Database
+                                                    <ul>
+                                                        <li>
+                                                            Intersystems Cache, REST API
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Summary
+                                                    <ul>
+                                                        <li>Design and implement system design for creating applications required within the business</li>
+                                                        <li>Create data flow and data transformation logic</li>
+                                                        <li>Liaise with the project stakeholder and programming team to ensure proper communication is relayed and application development integrity is maintained</li>
+                                                        <li>Build and suggest on Angular based front end application development</li>
+                                                        <li>Build REST API required for the front-end developers</li>
+                                                        <li>Update and maintain documentations</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </p>
+                                      </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card border-0 relative"> 
+                                    <div class="absolute card-icon bg-white  border-info"></div>                            
+                                    <div class="card-body">
+                                      <h4 class="card-title text-info font-weight-bold">APPLICATION DEVELOPER</h4>
+                                      <p class="card-title px-3 font-weight-bold bg-light">Nov 2017 - Jan 2022</p>
+                                      <div class="card-text">
+                                        <p class="font-italic">Douglass Hanly Moir Pathology, Sydney, NSW, Australia</p>
+                                            <ul>
+                                                <li>
+                                                    Application Development
+                                                    <ul>
+                                                        <li>
+                                                            Desktop Application
+                                                            <ul>
+                                                                <li>
+                                                                    JAVA, Python
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            Full Stack Web Application
+                                                            <ul>
+                                                                <li>Angular</li>
+                                                                <li>C#, .net Core</li>
+                                                                <li>REST Api</li>
+                                                                <li>VB</li>
+                                                                <li>PHP, JAVA</li>
+                                                                <li>HTML, CSS, AJAX, JQUERY, JavaScript, Bootstrap</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    SQL Development and DBA
+                                                    <ul>
+                                                        <li>SQL Server, MySQL</li>
+                                                        <li>T-SQL, SSIS, SSRS, SSMS, ETL</li>
+                                                        <li>PowerBI, Tableau</li>
+                                                        <li>Crystal Report</li>
+                                                        <li>MS-EXCEL, Pivot Tables, Power Query</li>
+                                                        <li>VBA</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Summary
+                                                    <ul>
+                                                        <li>Create end-user applications, both front end GUI (web and desktop based) and API</li>
+                                                        <li>Manage data flow and storage</li>
+                                                        <li>Design SQL database and implement TSQL for automation, data security and integrity</li>
+                                                        <li>Create real-time reporting and dashboard packages</li>
+                                                        <li>Create automated Visual Basic codes for EXCEL automations</li>
+                                                        <li>Create SharePoint workflow (Nintex)</li>
+                                                        <li>Maintain and update company's internet and intranet sites</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Description
+                                                    <ul>
+                                                        <li>Review and interpret project specifications and technical designs, communicating enquiries to the application development and deployment team</li>
+                                                        <li>Write programming code to develop, maintain and update applications for internal use via various programming platforms</li>
+                                                        <li>Develop and implement functional improvements and maintain structure, security, workflows and forms on company's intranet</li>
+                                                        <li>Research, evaluate and determine resources for end-use application need, while developing applications</li>
+                                                        <li>Research and analyse existing software and applications used within the company, identifying deficiencies in the existing system and developing applications to resolve those deficiencies</li>
+                                                        <li>Develop and design SQL databases for applications and acting as T-SQL programmer</li>
+                                                        <li>Regularly update and maintain company websites</li>
+                                                        <li>Continuously test, debug and upgrade existing applications and program for better user experience and to meeting the organization’s needs</li>
+                                                        <li>Create end-user manuals, program documentation, operational documentation, change documentation and training documentation</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </p>
+                                      </div>
+                                    </div>
+                                </div>    
+
+                            </div>                            
+                        </div>   
+                        
+                    </div>
+                </div>                 
+             </div>
+        </div>
+        
+    </section>
+
+    <!--Services-->
+    <section id="services" class="container-fluid bg-info text-white mt-3 mb-3">
+        <div class="row align-items-start">            
+            <div class="col px-5 py-2">
+               <div class="row">
+                   <div class="col-sm-1 col-md-3 col-lg-4"></div>
+                   <div class="col-sm-10  col-md-6 col-lg-4">
+                       <div class="section-header  text-center  ml-auto mr-auto">
+                           <h3 class="title  border-bottom p-3">Services</h3>
+                           <h5 class="sub-title p-3">A full stack service related to any application development
+
+                        </h5>
+                       </div>
+                   </div>
+                   <div class="col-sm-1  col-md-3 col-lg-4"></div>
+               </div>
+               <div class="mt-3 text-justify">
+                <div class="row text-center">
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        
+                        <div class="card bg-info border-0" >
+                            <img src="assets/icons/globe_white.png" class="card-img-top icon" alt="FrontEnd">
+                            <div class="card-body">
+                              <h5 class="card-title">FRONT END DEVELOPMENT</h5>
+                              <p class="card-text p-2">I have been involved in designing many web and desktop based application interfaces. My expertise are ANGULAR, Bootstrap, HTML, CSS, JavaScript, jQuery, pHp, AJAX and extends to JAVAFx and C# for application interface design</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card bg-info border-0" >
+                            <img src="assets/icons/code_white.png" class="card-img-top icon" alt="BackEnd">
+                            <div class="card-body">
+                              <h5 class="card-title">BACK END DEVELOPMENT</h5>
+                              <p class="card-text p-2">I can create APIs to handle data flow to and from the databases. I have successfully deployed numerous REST APIs used internally for the applications I developed for the company. The expertise includes, but is not limited to C#, .net Core, and Intersystems Cache. Database design and optimization also falls under my expertise.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card bg-info border-0" >
+                            <img src="assets/icons/database_white.png" class="card-img-top icon" alt="Database">
+                            <div class="card-body">
+                              <h5 class="card-title">DATABASE SERVICES</h5>
+                              <p class="card-text p-2">SQL SERVER and MySQL are, but not limited to, my database expertise. I have been working as a TSQL developer, creating views, functions and stored procedures, maximizing efficiency and security at database level for the company. I also work on Intersystems Cache database.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card bg-info border-0" >
+                            <img src="assets/icons/cpu_white.png" class="card-img-top icon" alt="Other">
+                            <div class="card-body">
+                              <h5 class="card-title">OTHER SERVICES</h5>
+                              <p class="card-text p-2">Some other services include VB programming for EXCEL, Power BI, SSRS, SSIS. I have also programmed within Crystal Reporting package for automated data handling and numerous process automation along with Visual Cut.</p>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+                   
+               </div>                 
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Contact Section -->
-    </main>
-    <!-- End #main -->
+       </div>
+    </section>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="bg-dark text-white opacity-80 mt-5">
-      <div class="container">
-        <h3>Vijay Hamal</h3>
-        <p>Web or desktop based app developer</p>
 
-        <div class="copyright">
-          &copy; Copyright <strong><span>Vijay Hamal</span></strong
-          >. All Rights Reserved
+    <!--Contact-->
+
+    <section id="contact" class="container-fluid mt-3 mb-3">
+        <div class="row align-items-start">
+            
+            <div class="col px-5 py-2">
+                <div class="row">
+                    <div class="col-sm-1 col-md-3 col-lg-4"></div>
+                    <div class="col-sm-10  col-md-6 col-lg-4">
+                        <div class="section-header  text-center  ml-auto mr-auto">
+                            <h3 class="title  border-bottom p-3">Contact</h3>
+                            <h5 class="sub-title p-3"></h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-1  col-md-3 col-lg-4"></div>
+                </div>
+                <div class="mt-3 row">
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="row p-2">
+                            <div class="col-3">
+                                <img src="assets/icons/location_info.png" class="card-img-top icon icon-sm" alt="Location">
+                            </div>
+                            <div  class="col-9">
+                                <span>Sydney, NSW, Australia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <a class="row p-2"  href="mailto:hamal.vijay@gmail.com">
+                            <div class="col-3">
+                                <img src="assets/icons/mail_info.png" class="card-img-top icon icon-sm" alt="Email">
+                            </div>
+                            <div  class="col-9 text-dark">
+                                <span>hamal.vijay@gmail.com</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="row p-2">
+                            <div class="col-3">
+                                <img src="assets/icons/call_info.png" class="card-img-top icon icon-sm" alt="Phone">
+                            </div>
+                            <div  class="col-9">
+                                <span>+61-452468331</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <a class="row p-2" href="https://www.linkedin.com/in/vijayhamal/" target="_blank">
+                            <div class="col-3">
+                                <img src="assets/icons/linkedin_info.png" class="card-img-top icon icon-sm" alt="Linkedin">
+                            </div>
+                            <div  class="col-9 text-dark">
+                                <span>Vijay Hamal</span>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>                 
+            </div>
         </div>
-      </div>
+        
+    </section>
+    <!--Footer-->
+    <footer class="bg-secondary text-white p-5">
+        <div class="col text-center">
+            <h5><strong>Vijay Hamal</strong></h5>
+            <p>Web or desktop based app developer</p>
+            <p>&copy; Vjay Hamal.</p>
+            <p>All rights reserved</p>
+        </div>
     </footer>
-    <!-- End Footer -->
 
-    <div id="preloader"></div>
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    <div class="m-3 fixed-bottom">
+        <a class="float-right" href="#">
+            <img src="assets/icons/arrow_rounded_info.png" class="icon rotate270" alt="Other">
+        </a>
+    </div>
   </body>
-  <script src="script.js"></script>
+
+  
+  <script>
+    $(document).ready(function(){
+        $(".side-nav-toggle").on('click', function(event){
+            $(".side-nav").toggleClass("navActive")
+            $(".side-nav-content").toggleClass("show")
+            $("#toggleCheck").prop("checked", !$("#toggleCheck").prop("checked"))
+        });
+    })
+
+    $(document).mouseup(function(e){
+        if(!e.target.classList.contains('side-nav-toggle')){
+            if($("#toggleCheck").prop("checked")){
+                $(".side-nav-toggle").click()
+            }            
+        }
+    })
+  </script>
 </html>
