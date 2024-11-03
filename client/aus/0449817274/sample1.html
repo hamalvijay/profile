@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/images/icon.png">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script src="assets/scripts/script.js"></script>
+
+    <title>VSolutions | Sample Web Page</title>
+</head>
+<body>
+
+    
+ 
+    <div class="container-fluid vh-100 absolute t-0 p-0">
+        <div class="background-image w-100 h-100" style="z-index : -1;position: relative;"></div>
+        <div class="header-background-dropback  absolute t-0 w-100 h-100 "></div>
+    </div>
+    
+    <div class="nav-container bg-dark container-fluid px-5 py-2 d-flex flex-row align-items-center justify-content-between text-white">
+        <div class="d-flex flex-row justify-content-between w-100">
+            <h3 class="">VSolutions</h3>
+            <div class="icon menu-btn hover">
+                <img class="show" src="assets/images/icon_menu.png">
+                <img class="hide" src="assets/images/icon_close.png">
+            </div>
+        </div>
+        <div class="nav-list text-white">
+            <span class=" me-5"><a href="#" class=" text-white">Home</a></span>
+            <span  class="me-5"><a href="#about"class=" text-white">About</a></span >
+            <span  class="me-5"><a href="#services" class=" text-white">Services</a></span >
+                <span  class="me-5"><a href="#team" class=" text-white">Team</a></span >
+            <span  class="me-5"><a href="#contact" class=" text-white">Contact</a></span >
+        </div>
+    </div>
+
+   <div class="nav-mobile nav-list-mobile hide r-0 p-5 flex-column align-items-center justify-content-around bg-dark ">
+        <span class=""><a href="#" class=" text-white">Home</a></span>
+        <span  class=""><a href="#about"class=" text-white">About</a></span >
+        <span  class=""><a href="#services" class=" text-white">Services</a></span>
+        <span  class=""><a href="#team" class=" text-white">Team</a></span >
+        <span  class=""><a href="#contact" class=" text-white">Contact</a></span >
+    </div>
+    
+    <div id="home" class="mb-5"> </div>
+    <div class="home-page">
+        <div class="container-fluid w-100 h-100 vh-100 text-center d-flex flex-column justify-content-center text-white">
+            <h2>We are here to support you</h2>
+            <div class="bg-success line"></div>
+            <h1 >VSolutions</h1>
+            <div class="d-inline-block">
+                <button class="btn btn-success mt-5">
+                    <a href="#contact" class=" text-white">Contact</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+   
+    
+    <div id="about" class="container-fluid d-flex flex-column align-items-center py-5 ">
+        <h1 class="mt-5">About</h1>
+        <div class="bg-success line"></div>
+        <h2>Support Redefined</h2>
+        <div class="container mt-3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="container col mt-3">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 p-5">
+                    <div class="image-about image1"></div>
+                    
+                    <p class="container mt-3  text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-sm-12 col-md-6 p-5">
+                    <div class="image-about image2"></div>
+                    <p class="container mt-3 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div> 
+
+    <div id="services" class="container-fluid d-flex flex-column align-items-center py-5">
+        <h1 class="mt-5">Services</h1>
+        <div class="bg-success line"></div>
+        <h2>Service excellence in every detail</h2>
+        <div class="container mt-3">
+            
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="assets/images/service1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Disablity care</h1>
+                        <p>We provide personally tailored individualized care.</p>
+                    </div>
+                    <div class="text-center p-3 d-block d-md-none text-dark">
+                        <h1>Disablity care</h1>
+                        <p>We provide personally tailored individualized care.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="assets/images/service2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Nursing care</h1>
+                        <p>We provide nursing care to patients.</p>
+                    </div>
+                    <div class="text-center p-3 d-block d-md-none text-dark">
+                        <h1>Nursing care</h1>
+                        <p>We provide nursing care to patients.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="assets/images/service3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Consultation</h1>
+                        <p>We provide nursing and health consultation.</p>
+                    </div>
+                    <div class="text-center p-3 d-block d-md-none text-dark">
+                        <h1>Consultation</h1>
+                        <p>We provide nursing and health consultation.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+
+    <div id="team" class="container-fluid d-flex flex-column align-items-center py-5">
+        <h1 class="mt-5">Our team</h1>
+        <div class="bg-success line"></div>
+        <h2>Experts in service</h2>
+        <div class="container mt-4">
+            <div class="row ">
+                <div class="col-sm-12 col-md-4 mt-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="team-image">
+                            <img src="assets/images/team1.jpg">
+                        </div>
+                        <h3 class="mt-4">Richard Lincon</h3>
+                        <h6>Chief Executive Officer</h6>
+                        <div>Registered Nurse</div>
+                        <div class="my-2"></div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_email.png" class="w-75 h-75">
+                            </div>                            
+                            <div>richard.lincon@vsolutions.com.au</div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_phone.png" class="w-75 h-75">
+                            </div>                            
+                            <div>+61-412345678</div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 mt-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="team-image">
+                            <img src="assets/images/team2.jpg">
+                        </div>
+                        <h3 class="mt-4">Harry Ming</h3>
+                        <h6>Chief Financial Officer</h6>
+                        <div>Chartered Accountant</div>
+                        <div class="my-2"></div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_email.png" class="w-75 h-75">
+                            </div>                            
+                            <div>harry.ming@vsolutions.com.au</div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_phone.png" class="w-75 h-75">
+                            </div>                            
+                            <div>+61-47373421</div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 mt-5">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="team-image">
+                            <img src="assets/images/team3.jpg">
+                        </div>
+                        <h3 class="mt-4">Joseph Wood</h3>
+                        <h6>Chief Planning Executive</h6>
+                        <div>Masters in Business</div>
+                        <div class="my-2"></div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_email.png" class="w-75 h-75">
+                            </div>                            
+                            <div>joseph.wood@vsolutions.com.au</div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_phone.png" class="w-75 h-75">
+                            </div>                            
+                            <div>+61-473823413</div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="contact" class="container-fluid d-flex flex-column align-items-center py-5">
+        <h1 class="mt-5">Contact</h1>
+        <div class="bg-success line"></div>
+        <h2></h2>
+        <div class="container mt-4">
+            <div class="row ">
+                <div class="col-sm-12 col-md-6 mt-5">
+                    <div style="width: 100%"><iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400px&amp;hl=en&amp;q=263%20Henry%20Parry%20Drive%20North%20Gosford%202250%20NSW+(VSolutions)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe></div>
+                </div>
+                <div class="col-sm-12 col-md-6 mt-5  d-flex flex-column justify-content-between" >
+                    <div class="d-flex flex-column align-items-start ms-3" >
+                        <h3 class="fw-bol">VSolutions</h3>
+                        <div>263 Henry Parry Drive</div>
+                        <div>North Gosford, 2250</div>
+                        <div>New South Wales, NSW Australia</div>
+                        <div class="my-2"></div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_email.png" class="w-75 h-75">
+                            </div>                            
+                            <div>hamal.vijay.azure@gmail.com</div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="icon me-3">
+                                <img src="assets/images/icon_phone.png" class="w-75 h-75">
+                            </div>                            
+                            <div>+61-452468331</div>
+                        </div> 
+                    </div>
+
+                    <div class="d-flex flex-column align-items-start  ms-3 mt-5">
+                        <div>Connect with us via:</div>
+                        <div class="my-2"></div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <div class="icon me-4 hover">
+                                <img src="assets/images/icon_linkedin.png" class="w-75 h-75">
+                            </div>                            
+                            <div class="icon me-4 hover">
+                                <img src="assets/images/icon_twitter.png" class="w-75 h-75">
+                            </div>
+                            <div class="icon me-4 hover">
+                                <img src="assets/images/icon_instagram.png" class="w-75 h-75">
+                            </div>
+                            <div class="icon me-4 hover">
+                                <img src="assets/images/icon_youtube.png" class="w-75 h-75">
+                            </div>
+                            <div class="icon me-4 hover">
+                                <img src="assets/images/icon_facebook.png" class="w-75 h-75">
+                            </div>
+                        </div> 
+                       
+                    </div>
+                    <div class="mt-4"></div>
+                    <div class="d-inline-block">
+                        <button 
+                            class="btn btn-success d-flex"
+                            type="button"
+                            data-bs-toggle="modal" data-bs-target="#contactForm"
+                        >Send an enquire</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="modal fade  mt-5" id="contactForm" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">            
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">VSolutions</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe94E4zY7Kn8Sw61JNHAXDBTUMR6hwC7KyQ9Go70wTKSuTGcw/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>                
+            </div>           
+        </div>
+      </div>
+
+    
+    
+</body>
+
+</html>
