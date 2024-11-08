@@ -8,11 +8,25 @@
     --dark-black : #000000;
 }
 
-/* body{
-    padding : 0;
-    margin : 0;
-    box-sizing: border-box;
-} */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 2px;
+    }
+    
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+    border-radius: 10px;
+    }
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    }
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    }
+    
 .hover {
     cursor: pointer;
 }

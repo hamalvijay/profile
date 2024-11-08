@@ -28,6 +28,10 @@
         padding: 0;
     }
 
+    a{
+        text-decoration: none;
+    }
+
     .hover:hover{
         cursor: pointer;
     }
@@ -70,7 +74,7 @@
     .card-icon{
         height: 20px;
         width: 20px;
-        border: 1px solid var(--info);
+        border: 1px solid var(--bs-dark);
         border-radius: 50%;
         top: 0px;
         left: -10px;
@@ -79,7 +83,7 @@
     .side-nav{
         background: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3));
         height:0px;
-        width: 80px;
+        width: auto;
         position: fixed;
         z-index: 10;
     }

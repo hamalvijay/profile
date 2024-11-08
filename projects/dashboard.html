@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/database_dark.png">
+    
+    <title>Vijay Hamal | Senior Software Engineer</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script src="../assets/js/jquery.slim.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script_proj.js"></script>
+  </head>
+  <body >
+    <!--Navbar-->
+
+    <section id="content" class="relative">
+      <div class="dash-nav container-fluid d-flex flex-row  align-items-center justify-content-between bg-dark w-100">
+        <a class="p-2 d-flex flex-row justify-content-start text-decoration-none " href="../index.html" target="_blank">                            
+          <img src="../assets/icons/arrow_rounded_dark.png" class="card-img-top icon icon-sm rotate180" alt="Back"> 
+          <h6 class="text-white ms-3">Back to profile</h6>
+        </a>  
+        <div class="text-white d-flex flex-row ">
+          <div class="viewChanger d-flex flex-column  border border-top-0 border-start-0 border-end-0 border-bottom-0 me-4 hover" onclick="changeWidth(1200)">
+            <img src="../assets/icons/desktop_white.png" class="card-img-top icon icon-sm me-3 "/>
+            <span>Desktop</span>
+          </div>
+          <div class="viewChanger d-flex flex-column  border border-top-0 border-start-0 border-end-0 border-bottom-0 me-4 hover" onclick="changeWidth(800)">
+            <img src="../assets/icons/tablet_white.png" class="card-img-top icon icon-sm me-3 "/>
+            <span>Tablet</span>
+          </div>
+          <div class="viewChanger d-flex flex-column border border-top-0 border-start-0 border-end-0 border-bottom-0 me-4 hover" onclick="changeWidth(600)">
+            <img src="../assets/icons/mobile_white.png" class="card-img-top icon icon-sm me-3 "/>
+            <span>Mobile</span>
+          </div>
+          
+          
+        </div>    
+      </div>
+
+
+      <div class="container-fluid bg-dark w-100">
+        <div class="d-flex flex-column align-items-center" id="samples">
+                    
+        </div>
+      </div>
+    </section>
+</body>
+
+<style>
+  .dash-nav{
+    position : sticky;
+    top : 0;
+    z-index: 100;
+    height : 60px;
+  }
+</style>
