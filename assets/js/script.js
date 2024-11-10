@@ -63,6 +63,7 @@ function formConfigDefinition(){
                     type: 'email',
                     placeholder: 'john.citizen@email.com',
                     value : 'john.citizen@email.com',
+                    required : true,
                     validation: {
                         regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                         errorMessage: 'Enter a valid email address.'
