@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/images/icon.png">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/scripts/bootstrap.min.js"></script>
-    <script src="assets/scripts/script.js"></script>
-
+    <script>
+        var links = ["assets/css/bootstrap.min.css", "assets/css/style.css"];
+        var scripts = ["assets/scripts/jquery.min.js", "assets/scripts/bootstrap.min.js", "assets/scripts/script.js"];
+    
+        links.forEach(function(link) {
+          var linkTag = document.createElement('link');
+          linkTag.rel = "stylesheet";
+          linkTag.href = link + "?version=" + new Date().getTime(); // Add version query string
+          document.head.appendChild(linkTag);
+        });
+    
+        scripts.forEach(function(script) {
+          var scriptTag = document.createElement('script');
+          scriptTag.src = script + "?version=" + new Date().getTime(); // Add version query string
+          document.head.appendChild(scriptTag); // Append to head to load before body content
+        });
+      </script>
     <title>VSolutions | Sample Web Page</title>
 </head>
 <body>
