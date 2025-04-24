@@ -208,17 +208,19 @@ function submit(){
 
 function sendData(formDataString, debug){
     if(debug){
+        console.log(formDataString);
         return;
     }
-    var fetchURL = "https://script.google.com/macros/s/AKfycbwWhiemNUSZE3rw__kvJS0FQAqiIhOD2Sft8xGDYtPvgqIqLWNHJ5CdMekVsEsTy0eH/exec";
+
+    var fetchURL = "https://script.google.com/macros/s/AKfycbzLW3CWAKXvS7NnOzhpt0hlINhxoaaqK7q86mFt5XUt9dnsZf3cLo2KET1q01AP9fpW/exec";
+    
     $("#formProcessingStatus").show();
     fetch(fetchURL, 
         {
-            redirect : "follow",
             method : "POST",
             body : formDataString,
             headers : {
-                "Content-Type" : "text/plain;charset=utf-8"
+                "Content-Type" : "application/x-www-form-urlencoded"
             }
         }
     ).then(function(response){
@@ -232,7 +234,6 @@ function sendData(formDataString, debug){
         if(response.status == 200){
             $("#formProcessingStatus").hide();
             showSuccess();
-            hideForm();
             
         }
         else{
