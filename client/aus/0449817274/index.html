@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Helping Hands | NDIS Provider</title>
+    <link rel="icon" href = "assets/images/icon.png">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+
+</head>
+<body class="container-fluid m-0 p-0">
+    <section id="navigation"></section>
+    <section id="hero"></section>
+    <section id="aboutus" class="py-4"></section>
+    <section id="services" class="py-4"></section>
+    <section id="team" class="py-4"></section>
+    <section id="contact" class="py-4"></section>
+    <section id="contact_form" class="py-4"></section>    
+    <section id="testimonials" class="py-4"></section>
+<div class="p-5 w-100"></div>
+<div id="footer"></div>
+
+</body>
+</html>
+
+<script>
+    ["navigation","hero","aboutus","services","team","contact","contact_form","testimonials","footer"].forEach(x => {
+    fetch(x + '.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(x).innerHTML = data;
+        });
+    
+    fetch('logo.html').then(response=>response.text())
+    .then(data=>{
+        var classes = document.getElementsByClassName("company-logo");
+        Array.from(classes).forEach(el => {
+            el.innerHTML = data;
+        });
+    })
+
+    window.onload = function() {
+    setTimeout(() => {
+        initializeTestimonialForm(true);
+        initializeContactForm(true);
+        getTestimonials();
+    }, 500);
+};
+});
+    
+</script>
+
+<script src="assets/scripts/menu.js"></script>
+<script src="assets/scripts/contact.js"></script>
+<script src="assets/scripts/testimonial.js"></script>
+

@@ -1,0 +1,91 @@
+<div class="bg-light px-2 navigation-bar fixed-top relative">
+    <div class="d-flex flex-row justify-content-between">        
+        <div class="logo w-100 company-logo"> </div> 
+        <div class="navigation-bar d-flex align-items-center">
+            <div class="d-none d-md-flex flex-row align-items-center h-100">
+                <a href="#" class="text-info text-decoration-none text-center pointer py-2 px-3 me-4 fw-bold nav-item">Home</a>
+                <a href="#aboutus" class="text-info text-decoration-none  text-center pointer  py-2 px-3 me-4 fw-bold nav-item">About</a>
+                <a href="#services" class="text-info text-decoration-none  text-center pointer  py-2 px-3 me-4 fw-bold nav-item">Services</a>
+                <a href="#team" class="text-info text-decoration-none  text-center pointer  py-2 px-3 me-4 fw-bold nav-item">Team</a>
+                <a href="#contact" class="text-info text-decoration-none  text-center pointer  py-2 px-3 me-4 fw-bold nav-item">Contact</a>
+                <a href="#testimonials" class="text-info text-decoration-none  text-center pointer  py-2 px-3 me-4 fw-bold nav-item">Testimonials</a>
+            </div>
+            <div id="menu-dropdown-toggle" class="d-flex d-md-none menu-icon-holder bg-info rounded-circle p-1 relative">
+                <img class="absolute menu-icon center t50 l50 pointer" src="assets/images/icon_menu.png">
+                
+            </div>
+            
+            
+        </div>
+    </div>
+    <div id="menu-dropdown-items" class="absolute bg-info px-5 py-3 l-none rounded d-flex flex-column">
+        <a href="#" class="text-white text-decoration-none  text-center pointer py-2 px-5">Home</a>
+        <a href="#aboutus" class="text-white text-decoration-none  text-center pointer  py-2 px-5  border border-white border-start-0 border-end-0 border-bottom-0">About</a>
+        <a href="#services" class="text-white text-decoration-none  text-center pointer  py-2 px-5  border border-white border-start-0 border-end-0 border-bottom-0">Services</a>
+        <a href="#team" class="text-white text-decoration-none  text-center pointer  py-2 px-5  border border-white border-start-0 border-end-0 border-bottom-0">Team</a>
+        <a href="#contact" class="text-white text-decoration-none  text-center pointer  py-2 px-5  border border-white border-start-0 border-end-0 border-bottom-0">Contact</a>
+        <a href="#testimonials" class="text-white text-decoration-none  text-center pointer  py-2 px-5  border border-white border-start-0 border-end-0 border-bottom-0">Testimonials</a>
+        
+    </div>
+</div>
+
+
+
+
+
+<style>
+
+    #menu-dropdown-items{
+        width : 100vw !important;
+        
+    }
+
+    .l-none{
+        left : -10000px !important;
+    }
+    
+    .menu-icon-holder{
+        height : 30px; width: 30px;
+
+    }
+
+    .menu-icon{
+        height : 60%;
+        width : 60%;        
+    }
+
+    .nav-item:hover{
+        font-weight : bold;
+        border-bottom: 3px solid var(--bs-info) !important;
+        
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .navigation-bar{
+        height : 55px;
+    }
+    .helping{
+        font-size : 17px;
+    }
+    .h{
+        font-size: 50px;
+        top: -10px;
+        left : 0;
+        font-weight: bold;
+    }
+    .elping{
+        top: 5px;
+        left : 40px;
+    }
+
+    .ands{
+        top: 20px;
+        left : 40px;
+        font-size : 15px;
+    }
+    .logo-subtitle{
+        top : 40px;
+        left : 40px;
+        font-size : 7px;
+    }
+</style>

@@ -1,0 +1,43 @@
+<div class="container my-5 py-5">
+    
+    <h2 class="fw-bold text-center">Testimonials</h2>
+    <div class="bg-info line relative">
+        <div class="absolute square l50 t50 center-rotate-45"></div>
+    </div>
+    <p class="text-muted text-center fst-italic mb-4">What our clients say</p>
+    
+        
+    <div class="container my-4">
+        <div id="testimonialsLoading" class="spinner-border text-info ms-5 hide" role="status" >
+            <span class="sr-only"></span>
+        </div>
+        <div class="d-flex overflow-auto flex-nowrap gap-4 px-2 py-5" id="testimonialsScroller"> </div>
+
+    </div>
+
+    <div class="container my-5  p-5 border bg-info bg-opacity-10">
+        <h2 class="text-center fw-bold mb-4">Write a Review</h2>  
+                <form id="enquiryForm" class="py-3 px-2 text-start">
+                    <div id="testimonialForm" class="py-2"> </div>
+
+                    <div class="mb-3" id="ratingstars">
+                        <label class="form-label d-block mb-2">Your Rating</label>
+                        <div id="starRating" class="d-flex align-items-center gap-2">
+                            <span class="star fs-2 pointer text-warning" data-value="1">★</span>
+                            <span class="star fs-2 pointer text-warning" data-value="2">★</span>
+                            <span class="star fs-2 pointer text-warning" data-value="3">★</span>
+                            <span class="star fs-2 pointer text-warning" data-value="4">★</span>
+                            <span class="star fs-2 pointer text-warning" data-value="5">★</span>
+                            <span class="ms-3" id="ratingValue">5</span> / 5
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-info disabled text-white" id="submitTestimonial" style="display: none;" >Post</button>
+                </form>
+                <div id="testimonialformProcessingStatus" class="spinner-border text-info ms-5 hide" role="status" >
+                    <span class="sr-only"></span>
+                </div>
+    </div>
+</div>
+
+

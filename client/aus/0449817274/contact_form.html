@@ -1,0 +1,15 @@
+<div class="d-flex flex-row justify-content-center">
+    <div class="mt-5 bg-info bg-opacity-10 rounded col-sm-12 col-md-8 p-5">  
+        <form id="enquiryForm" class="py-3 px-2 text-start">
+            <h4 id="dynamicFormHeader" class="text-center">Contact form</h4>
+            <div id="dynamicForm" class="py-2"> </div>
+            <button type="button" class="btn btn-info disabled text-white" id="submitBtn" style="display: none;" >Send</button>
+            <div id="formProcessingStatus" class="spinner-border text-info ms-5" role="status" >
+                <span class="sr-only"></span>
+            </div>
+            
+            <button type="button" class="btn btn-info text-white mt-3" id="initializeFormBtn" style="display: none;" onclick="initializeForm(true)">Send another query</button>   
+        </form>
+    </div>
+</div>
+

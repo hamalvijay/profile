@@ -6,6 +6,14 @@
     --grey : #E3E4F4;
     --pink : #E0B6C1;
     --dark-black : #000000;
+    --bs-info: #02c1d5;
+    --bs-info-rgb: 2,193,213;
+}
+
+/* body{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -25,20 +33,49 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-    }
-    
-.hover {
+    } */
+
+.m-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    transform: translate(-50%, -50%);
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.center-rotate-45 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.l50{
+    left : 50%;
+}
+.t50{
+    top:50%;
+}
+.r50{
+    right : 50%;
+}
+.b50{
+    bottom: 50%;
+}
+
+
+.pointer {
     cursor: pointer;
 }
 
 a{
     text-decoration: none;
-    /* color: var(--white); */
 }
 
 li{
     list-style: none;
-    color: var(--white);
 }
 
 .btn{
@@ -82,207 +119,26 @@ li{
     text-align: justify;
 }
 
-/* NAVIGATION*/
-
-.nav-container{
-    position: sticky;
-    top : 0;
-    z-index : 15;
+.line {
+    width: 200px;
+    height: 5px;
+    border-radius: 5px;
+    margin: 15px auto;
 }
 
-.nav-list{
-    display: flex;
-    flex-direction: row;
+.line .square{
+    height : 15px;
+    width : 15px;
+    border: 5px solid white;
 }
 
-.nav-list span,
-.nav-list-mobile span
-{
-    position: relative; 
-    font-size : 15px;
-}
-
-.nav-list .active,
-.nav-list-mobile .active
-{
-    font-weight: bold;
-}
-
-.nav-list .active::after,
-.nav-list span:hover::after,
-.nav-list-mobile .active::after,
-.nav-list-mobile span:hover::after
-{
-    content: "";
-    position: absolute;
-    left : 0;
-    bottom: -10px;
-    height: 4px;
-    width: 0;
-    border-radius: 3px;;
-    background-color: var(--bs-success);
-}
-
-.nav-list span:hover::after,
-.nav-list-mobile span:hover::after
-{
-    width: 100%;
-}
-
-.nav-list .active::after,
-.nav-list-mobile .active::after
- {
-    width: 100%;
-}
-
-
-.nav-list-mobile {
-    display: none;    
-}
 
 .icon{
     height : 30px;
     width: 30px;
 }
 
-.menu-btn{
-    display: none;
-    
-}
-
 .icon img{
     height : 100%;
     width : 100%;
-}
-
-/* HOME */
-.home-page{
-    z-index: 1;
-    position: relative;
-}
-.background-image{
-    background-image: url("../images/background.jpeg");
-    background-size: cover;
-    background-position: bottom;
-}
-
-.line{
-    width: 200px;
-    height: 5px;
-    border-radius: 5px;
-    margin : 20px auto;
-}
-
-
-.header-background-dropback{
-    position: absolute;    
-    background-color : var(--dark-black);
-    opacity: 0.6;  
-      
-}
-
-/* ABOUT */
-.image-about{    
-    background-size: cover;
-    background-position: center;
-    width : 100%;
-    height : 400px;
-}
-
-.image1{
-    background-image: url("../images/about1.jpg");
-}
-
-.image2{
-    background-image: url("../images/about2.jpg");
-}
-
-/* SERVICES */
-.carousel-item img {
-    height: auto;
-    max-height : 400px;
-    object-fit: cover; 
-}
-
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-    color: var(--white); 
-}
-
-.carousel-caption h1 {
-    font-weight: bold;
-    color: var(--white);
-}
-
-.carousel-caption p {
-    font-size: 1.1rem;
-    color: var(--grey);
-}
-
-.carousel-caption .caption-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 15px; 
-}
-
-.carousel-indicators {
-    bottom: -20px; 
-}
-
-/* TEAM */
-
-.team-image{
-    width: 200px;
-            height: 200px;
-            border-radius: 50%; 
-            overflow: hidden; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-}
-
-.team-image img{
-    width: 100%;
-    height: 100%;
-            object-fit: cover;
-}
-
-
-/* CONTACT FORM */
-.modal-dialog {
-    max-width: fit-content;
-    margin: auto;
-}
-
-
-
-/* Mobile NAV*/
-@media only screen and (max-width : 700px){
-
-    .nav-list{
-        display: none;
-    }
-
-    .nav-list-mobile-show {
-        display: flex;
-        position: sticky;
-        top : 40px;
-        z-index : 15;
-        height : 100vh;
-    }
-    
-    .menu-btn{
-        display : block;
-    } 
-
-    .nav-list-items{
-        background-color: red;
-    }
-
-    
 }
