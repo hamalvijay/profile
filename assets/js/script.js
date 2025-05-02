@@ -5,7 +5,7 @@ $(document).ready(function(){
         $("#toggleCheck").prop("checked", !$("#toggleCheck").prop("checked"))
     });
 
-    initializeForm(false);
+    initializeForm(true);
     submit();
 })
 
@@ -57,7 +57,7 @@ function formConfigDefinition(){
             [
                 {
                     id: 'email',
-                    name : 'Email',
+                    name : 'Email address',
                     label: 'Email address',
                     class: 'col-sm-12 col-md-6',
                     type: 'email',
@@ -90,7 +90,7 @@ function formConfigDefinition(){
             fields : [
             {
                 id: 'enquire',
-                name : 'Enquiry',
+                name : 'Ask a question',
                 label: 'Ask a question',
                 type: 'textarea',
                 placeholder: 'Type your question here',
@@ -223,7 +223,7 @@ function submit() {
         });
         // Combine GivenName and Surname into Name
         if (formData['Given Name'] && formData['Surname']) {
-            formData['Name'] = `${formData['Given Name']} ${formData['Surname']}`;
+            formData['Full Name'] = `${formData['Given Name']} ${formData['Surname']}`;
             delete formData['Given Name'];
             delete formData['Surname'];
         }
@@ -241,17 +241,17 @@ function submit() {
 
 function sendData(formDataString, debug){
     if(debug){
+        console.log(formDataString);
         return;
     }
-    var fetchURL = "https://script.google.com/macros/s/AKfycbw3aCmmlc212LNBq5y-jZBQrfs0UXhR64uRR3tiz-IO5BY6JL0igoKddAjsXgW478-n/exec";
+    var fetchURL = "https://script.google.com/macros/s/AKfycbxDSaIaP5VVCXt06ZSbI2fdsSN2kc7vb0uL3wl6jNo2WxE8_9Q4vgWPTYxOEQbggvBt/exec";
     $("#formProcessingStatus").show();
     fetch(fetchURL, 
         {
-            redirect : "follow",
             method : "POST",
             body : formDataString,
             headers : {
-                "Content-Type" : "text/plain;charset=utf-8"
+                "Content-Type" : "application/x-www-form-urlencoded"
             }
         }
     ).then(function(response){
