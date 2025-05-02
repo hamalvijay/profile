@@ -1,6 +1,7 @@
 $(document).ready(function(){
     hideMenu();
     $(document).on('click', '#menu-dropdown-toggle', function(event){
+        
         if ($("#menu-dropdown-items").hasClass("l-0")) {
             hideMenu();
         } else {
@@ -13,14 +14,16 @@ $(document).ready(function(){
     });
 
     function showMenu(){
-        var $menu = $("#menu-dropdown-items");
-        $menu.removeClass("l-none").addClass("l-0");
+        $("#menu-dropdown-items").removeClass("l-none").addClass("l-0");
+        $("#menu-dropdown-toggle").addClass("open");
     }
 
     function hideMenu(){
-        var $menu = $("#menu-dropdown-items");
-        $menu.removeClass("l-0").addClass("l-none");
+        $("#menu-dropdown-items").removeClass("l-0").addClass("l-none");
+        $("#menu-dropdown-toggle").removeClass("open");
     }
+
+
 
 });
 

@@ -23,13 +23,15 @@
     <section id="contact_form" class="py-4"></section>    
     <section id="testimonials" class="py-4"></section>
     <div class="p-5 w-100"></div>
-<div id="footer"></div>
+
+    <div id="footer"></div>
 
 </body>
 </html>
 
 <script>
-    ["navigation","hero","aboutus","services","team","contact","contact_form","testimonials","footer"].forEach(x => {
+    ["navigation","hero","aboutus","services","team","contact","contact_form","testimonials","footer"]
+    .forEach(x => {
     fetch(x + '.html')
         .then(response => response.text())
         .then(data => {

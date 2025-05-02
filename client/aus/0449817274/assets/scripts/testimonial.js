@@ -16,6 +16,7 @@ $(document).on('click', '.star', function(event){
 });
 
 function getTestimonials(showFront){
+$(".testimonialsLoaded").hide();
 const api ="https://script.google.com/macros/s/AKfycbzn0wu6eDhK_bPLSvERWdhoWdcm6F-L69dgBBxdrKETtTiSt61AlPIaYDFxCX3w8zdp/exec?limit=100";
 fetch(api)
    .then(function(response) {
@@ -35,8 +36,9 @@ fetch(api)
 
 function buildTestimonials(data, showFront){
 $(".testimonialsLoading").hide();
+$(".testimonialsLoaded").show();
 if(data){
-   var divFront="<div class='alert alert-info' role='alert'>No testimonials to show.</div>";
+   var divFront="<div class='alert alert-brandcolor' role='alert'>No testimonials to show.</div>";
    var divModal=divFront;
    if(data.length>0){
        divFront="";
@@ -325,7 +327,7 @@ fetch(fetchURL,
 }
 
 function showTestimonialSuccess(){
-$("#testimonialForm").html("<div class='alert alert-info' role='alert'>Your testimonial has been received successfully.</div>");
+$("#testimonialForm").html("<div class='alert alert-brandcolor' role='alert'>Your testimonial has been received successfully.</div>");
 $("#ratingstars").hide();
 $("#submitTestimonial").hide();
 

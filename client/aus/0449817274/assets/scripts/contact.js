@@ -107,7 +107,7 @@ function formConfigDefinition(){
 function initializeContactForm(isBlank) {
     $("#submitBtn").addClass("disabled");
     $("#submitBtn").show();
-    $("#initializeFormBtn").hide();
+    $("#initializeContactFormBtn").hide();
     $("#dynamicForm").html("");
     $("#formProcessingStatus").hide();
 
@@ -230,13 +230,15 @@ $(document).on('click', '#submitBtn', function(event){
     }
     let formDataString = keyValuePair.join('&');
     
-    sendData(formDataString, false);
+    sendData(formDataString, true);
 });
 
 
 function sendData(formDataString, debug){
     if(debug){
         console.log(formDataString);
+        showSuccess();
+        $("#initializeContactFormBtn").show(); 
         return;
     }
     var fetchURL = "https://script.google.com/macros/s/AKfycbzLW3CWAKXvS7NnOzhpt0hlINhxoaaqK7q86mFt5XUt9dnsZf3cLo2KET1q01AP9fpW/exec";
@@ -258,10 +260,10 @@ function sendData(formDataString, debug){
             showFailure();
         }
     }).then(function (response){
+        $("#initializeContactFormBtn").show(); 
         if(response.status == 200){
             $("#formProcessingStatus").hide();
             showSuccess();
-            
         }
         else{
             $("#formProcessingStatus").hide();
@@ -271,9 +273,8 @@ function sendData(formDataString, debug){
 }
 
 function showSuccess(){
-    $("#dynamicForm").html("<div class='alert alert-info' role='alert'>Your response has been received successfully.</div>");
+    $("#dynamicForm").html("<div class='alert alert-brandcolor' role='alert'>Your response has been received successfully.</div>");
     $("#submitBtn").hide();
-    $("#initializeFormBtn").show();
 }
 
 function showFailure(){
