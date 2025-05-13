@@ -1,20 +1,34 @@
 @import url('font.css');
 
+/*======GLOBAL======*/
 :root{
-    --brandcolor: #ff6600;
-    --brandcolor-hover: #e65c00;
-    --brandcolor-active: #cc5200;
-    --brandcolor-light: #ffd9b3;
-    --brandcolor-lightest: #fde8d2;
-    --brandcolor-dark: #993d00;
+    --frog-green : #97cc97;
+    --tea-green : #d9edc3;
+    --turquoise-green : #aad5b5;
+    --green-spring-rain : #b0cfb8;
+    --summer-green : #94c1a0;
+    --nile-blue : #164061;
+
+    --brandcolor: #1f5782;
+    --brandcolor-hover: #164061;
+    --brandcolor-active: #153751;
+    --brandcolor-light: #aad5b5;
+    --brandcolor-lightest: #d9edc3;
+    --brandcolor-lightest-50: rgba(217, 237, 195,0.5);
+    --brandcolor-dark: #10314a;
     --brandcolor-contrast: #ffffff;
 
-    --brandcolor-rgb: 255, 102, 0;
+    --brandcolor-rgb: 22, 64, 97;
+}
+
+body{
+    background-color: rgba(var(--brandcolor-rgb), 0.05);
 }
 
 .bg-brandcolor        { background-color: var(--brandcolor) !important; }
 .bg-brandcolor-light  { background-color: var(--brandcolor-light) !important; }
 .bg-brandcolor-lightest  { background-color: var(--brandcolor-lightest) !important; }
+.bg-brandcolor-lightest-50  { background-color: var(--brandcolor-lightest-50) !important; }
 .bg-brandcolor-dark   { background-color: var(--brandcolor-dark) !important; }
 
 .text-brandcolor        { color: var(--brandcolor) !important; }
@@ -206,3 +220,211 @@ li{
     height : 100%;
     width : 100%;
 }
+
+/*======LOGO======*/
+    .company-logo{
+        height : 50px;
+    }
+    .company-logo-main{
+        height : 80%;  
+        top : 5px;    
+    }
+    .company-logo-name{
+        height : 20px;
+        top : 15px;
+        left : 60px;
+    }
+    
+    .company-subtitle{
+        top : 40px;
+        left : 60px;
+        font-size : 7px;
+    }
+
+/*======NAVBAR======*/
+    .nav-buffer,
+    .navigation-bar{
+        height : 55px;
+        background-color: #fff;
+    }
+
+    .nav-item{
+        position: relative;
+        display: inline-flex;
+
+    }
+
+    .nav-item::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0; 
+        height: 3px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover::after {
+        transform: scaleX(1);
+    }
+        
+    .menu-icon-holder{
+        height : 40px; width: 40px;
+    }
+    
+    .hamburger-holder{
+        width : 100%;
+        height : 100%;
+        background-color: transparent;
+        top : 0;
+        left : 0;
+    }
+    
+    .dash{
+        position: absolute;
+        width : 80%;
+        height : 4px;
+        background-color: var(--brandcolor);
+        margin: 3px 0;
+        border-radius: 2px;
+        transition: top 0.3s ease, bottom 0.3s ease, transform 0.3s ease, opacity 0.3s ease;     
+    }
+    .dash:nth-child(1) {
+        top: 15%
+    }
+
+    .dash:nth-child(2) {
+        top: 35%;
+    }
+
+    .dash:nth-child(3) {
+        top: 58%
+    }
+    .menu-icon-holder.open .dash:nth-child(1) {
+        transform: rotate(45deg);
+        top: 40%; 
+    }
+
+    .menu-icon-holder.open .dash:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon-holder.open .dash:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 40%
+    }
+
+    #menu-dropdown-items{
+        width : 100vw !important;
+        
+    }
+
+    .l-none{
+        left : -10000px !important;
+    }    
+
+/*======HERO======*/
+    .bg-linear-secondary-dark{
+        background: linear-gradient(90deg,var(--bs-dark) 0%, var(--bs-secondary) 100%);
+    }
+    
+    .hero{
+        height : 400px;
+    }
+
+    .cover-image{
+        background-image: url("../images/background.jpeg");
+        background-size:cover;
+        background-position: top;
+        
+    }
+
+    .ndis-logo-container{
+        height : 100px;
+        width : 100px;
+    }
+
+    .ndis-logo{
+        height : 100%;
+        width : 100%;
+    }
+
+/*======ABOUT======*/
+    .card-img-equal {
+        height: 400px; 
+        object-fit: cover;
+    }
+
+/*======SERVICES======*/
+    .carousel-item img {
+        height: auto;
+        max-height : 600px;
+        object-fit: fill; 
+    }
+
+    .carousel-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(var(--brandcolor-rgb), 0.5);
+        padding: 10px 0;
+    }
+
+    .carousel-caption h1 {
+        font-weight: bold;
+        color: var(--bs-white);
+    }
+
+    .carousel-caption p {
+        font-size: 1.1rem;
+        color: var(--bs-white) !important;
+    }
+
+    .carousel-caption .caption-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 15px; 
+    }
+
+    .carousel-indicators {
+        bottom: -20px;
+        
+    }
+
+/*======CONTACT======*/
+    .brand-icon-holder{
+        width : 35px;
+        height : 35px;
+    }
+
+    .brand-icon{
+        border-radius: 30%;
+    }
+
+    .brand-youtube{
+        border-top-right-radius: 100%;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 50%;
+    }
+
+    .brand-instagram{
+        border-radius: 40% ;
+    }
+
+    .brand_instagram_circle{
+        height : 50%; width : 50%; border : 3px solid white; border-radius: 50%;
+       
+    }
+    .brand_instagram_circle_small{
+        height : 10%; width : 10%; top : 15%; right : 15%;
+    }
+
+/*======FOOTER======*/
+    .powered-text{
+        font-size : 10px;
+    }
