@@ -76,6 +76,7 @@ async function useData(){
                     break;
                 default:
                 if (socialKeys.has(c.key) && c.value) {
+                     $("#connection-div").show();
                     $("#connection-icon-holder").append(getConnectionIcon(c.key, c.value));
                 }
                 break;
