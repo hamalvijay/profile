@@ -327,10 +327,6 @@ li{
     }    
 
 /*======HERO======*/
-    .bg-linear-secondary-dark{
-        /* background: linear-gradient(90deg,var(--bs-dark) 0%, var(--bs-secondary) 100%); */
-    }
-    
     .hero{
         height : 400px;
         position: relative;
@@ -419,6 +415,23 @@ li{
         border-bottom-right-radius: 50%;
         border-top-left-radius: 50%;
     }
+    
+    .brand-youtube-centre{
+        left : -10%;
+        top : -10%;
+    }
+
+    .brand-icon-youtube-triangle{
+        height : 40% !important;
+        width : 40% !important;
+        top : 30%;
+        left : 30%;
+    }
+
+    .brand-icon-youtube-masking{
+        left : -35%;
+        top : -35%;
+    }
 
     .brand-instagram{
         border-radius: 40% ;
@@ -430,6 +443,11 @@ li{
     }
     .brand_instagram_circle_small{
         height : 10%; width : 10%; top : 15%; right : 15%;
+    }
+
+/*======CAREER======*/
+    .career-accordion-button::after{
+        display : none !important;
     }
 
 /*======FOOTER======*/

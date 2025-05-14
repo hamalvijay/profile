@@ -85,57 +85,56 @@ async function useData(){
 
     //CAREER
     var career = db?.data?.career;
+    var careerParentDiv = "#careerScroller";
     if(career==null || career?.length==0){
-        $("#careerScroller").append("<p class='alert bg-brandcolor-lightest-50 border-0 text-brandcolor'>Sorry !! no position available for now. But keep an eye as we are planning for positing new opportunities very soon.</p>");
+        $(careerParentDiv).append("<p class='alert bg-brandcolor-lightest-50 border-0 text-brandcolor'>Sorry !! no position available for now. But keep an eye as we are planning for positing new opportunities very soon.</p>");
     }
     else{
         career.forEach(c=>{
             var div = `
-            <div class="col-12 mb-4">
-                <div class="card h-100 shadow-sm border-0 p-2 ">
-                    <div class="card-body d-flex flex-column ">
-                        <div class="d-flex flex-row justify-content-between align-items-baseline">
-                            <h4 class="card-title fw-bold text-brandcolor">${c['title']}</h4>
-                            <div class="card-text fw-bold">${c['job type']}</div>
+                    <div class="accordion-item border-0 shadow-sm">
+                        <div class="accordion-header" id="heading${c['id']}">
+                            <div class="accordion-button career-accordion-button border-0 collapsed d-flex align-items-center bg-transparent shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${c['id']}" aria-controls="collapse${c['id']}">
+                                <div class="d-flex flex-column">
+                                    <h5 class="fw-bold text-brandcolor">${c['title']}</h5>
+                                    <span class="text-muted fst-italic">📍 ${c['location']}</span>
+                                </div>
+                                <span class="ms-auto text-muted">${c['job type']}</span>
+                            </div>
                         </div>
-                        
-                        
-                        <div class="text-muted fst-italic">📍 ${c['location']}</div>
-                        <div class="mt-4 d-flex flex-row justify-content-between mt-2">
-                            <small class="text-muted"><strong>Date :</strong> ${c['posted date']}</small>
-                            <small class="text-muted"><strong>Apply before :</strong> ${c['expiry date']}</small>
-                        </div>
-                        
-                        
-                        <p class="card-text mt-4"><strong>Description :</strong></p>
-                        <p class="card-text ms-3">${c['description']}</p>
-                        
-                        <p class="card-text mt-2"><strong>Details :</strong> </p>
-                        <p class="card-text ms-3">${ c['details'].join("<br>") }</p>
-                
-                        
-                                
-                        <p class="mt-2"><strong>Requirements :</strong> </p>
+                        <div id="collapse${c['id']}" class="accordion-collapse collapse" aria-labelledby="heading${c['id']}" data-bs-parent="${careerParentDiv}">
+                            <div class="accordion-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <small class="text-muted"><strong>Date :</strong> ${c['posted date']}</small>
+                                    <small class="text-muted"><strong>Apply before :</strong> ${c['expiry date']}</small>
+                                </div>
 
-                        <p class="card-text ms-3"><strong>Education : </strong>${c['education'] ?? 'NA'}</p>
-                        <p class="card-text ms-3"><strong>Skills : </strong>${c['skills'] ?? 'NA'}</p>
-                        <p class="card-text ms-3"><strong>Experience : </strong>${c['experience'] ?? 'NA'}</p>
+                                <p class="card-text mt-4"><strong>Description :</strong></p>
+                                <p class="card-text ms-3">${c['description']}</p>
 
-                        <div class="text-brandcolor fs-5 m-2 ms-0 fst-italic">
-                            <strong>Benefits :</strong> : ${c['salary'] ?? 'TBA'}
+                                <p class="card-text mt-2"><strong>Details :</strong></p>
+                                <p class="card-text ms-3">${ c['details'].join("<br>") }</p>
+
+                                <p class="mt-2"><strong>Requirements :</strong></p>
+                                <p class="card-text ms-3"><strong>Education:</strong>${c['education'] ?? 'NA'}</p>
+                                <p class="card-text ms-3"><strong>Skills:</strong>${c['skills'] ?? 'NA'}</p>
+                                <p class="card-text ms-3"><strong>Experience:</strong>${c['experience'] ?? 'NA'}</p>
+                                <br>
+                                <div class="text-brandcolor fs-5 m-2 ms-0 fst-italic">
+                                    <strong>Benefits:</strong> ${c['salary'] ?? 'TBA'}
+                                </div>
+
+                                <div class="m-3 fst-italic">
+                                    <p>
+                                        If you are interested in this role, please send your <strong>Cover Letter</strong> & <strong>Resume</strong> to <strong><a class="text-brandcolor" href="mailto:${c['email']}">${c['email']}</a></strong> ${c['phone'] != null ? `or give us a call at <strong><a class="text-brandcolor pointer href="tel:${c['phone']}">${c['phone']}</a></strong>` : ``} and add below reference number in your subject line.
+                                    </p>
+                                    <p class="fst-normal fw-bold">Job reference no : ${c['id']}</p>
+                                </div>
+
+                            </div>
                         </div>
-                        <p class="m-3 fst-italic">
-                        If you are interested in this role, please send your <strong>Cover Letter</strong> & <strong>Resume</strong> to 
-                        <strong><a class="text-brandcolor" href="mailto:${c['email']}">${c['email']}</a></strong> ${c['phone'] != null ? `or give us a call at 
-                        <strong><a class="text-brandcolor pointer href="tel:${c['phone']}">${c['phone']}</a></strong>` : ``} and add below reference number in your subject line.<br>
-                        <div class='fst-normal fw-bold'>Job reference no : ${c['id']}</div>
-                        </p>
                     </div>
-                    
-                </div>
-            </div>
-            
-            `;
+                    `;
 
             $("#careerScroller").append(div);
         })
@@ -178,11 +177,14 @@ function getConnectionIcon(type, href){
         case "youtube" :
             return `
             <a class="container text-decoration-none" href="${href}" target="_blank" >
-                <div class="brand-icon-holder pointer">
-                    <div class="brand-icon rotate-neg45 brand-youtube bg-brandcolor w-100 h-100 d-flex flex-row justify-content-center align-items-center">
-                        <div class="text-white rotate-45 fw-bold">⏵</div>
+                <div class="brand-icon-holder pointer relative">                
+                    <div class="brand-icon rotate-neg45 brand-youtube bg-brandcolor w-100 h-100  overflow-hidden">  
+                        <div class="absolute brand-youtube-centre rotate-45 bg-brandcolor w-100 h-100">
+                            <div class="brand-icon-youtube-triangle absolute bg-white rotate-neg45"></div>
+                            <div class="absolute bg-brandcolor w-50 h-100 "></div>
+                        </div> 
                     </div>
-                </div>
+               </div>
             </a>
             `;
         case "instagram" :
