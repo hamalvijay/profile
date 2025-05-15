@@ -9,16 +9,26 @@
     --summer-green : #94c1a0;
     --nile-blue : #164061;
 
-    --brandcolor: #1f5782;
-    --brandcolor-hover: #164061;
-    --brandcolor-active: #153751;
-    --brandcolor-light: #aad5b5;
-    --brandcolor-lightest: #d9edc3;
+    --brandcolor: rgb(31, 87, 130);
+    --brandcolor-hover: rgb(22, 64, 97);
+    --brandcolor-active: rgb(21, 55, 81);
+    --brandcolor-light: rgb(170, 213, 181);
+    --brandcolor-lightest: rgb(217, 237, 195);
     --brandcolor-lightest-50: rgba(217, 237, 195,0.5);
-    --brandcolor-dark: #10314a;
-    --brandcolor-contrast: #ffffff;
+    --brandcolor-dark: rgb(16, 49, 74);
+    --brandcolor-contrast: rgb(255, 255, 255);
 
-    --brandcolor-rgb: 22, 64, 97;
+    --brandcolor-rgb: 31, 87, 130;
+    --brandcolor-hover-rgb: 22, 64, 97;
+    --brandcolor-active-rgb: 21, 55, 81;
+    --brandcolor-light-rgb: 170, 213, 181;
+    --brandcolor-lightest-rgb: 217, 237, 195;
+    --brandcolor-lightest-50-rgb: 217, 237, 195,0.5;
+    --brandcolor-dark-rgb: 16, 49, 74;
+    --brandcolor-contrast-rgb: 255, 255, 255;
+}
+*{
+    font-family: "Montserrat";
 }
 
 body{
@@ -221,24 +231,24 @@ li{
     width : 100%;
 }
 
+section {
+  scroll-margin-top: 55px;
+}
+
+#home{
+    margin-top : -55px;
+    height : 55px;
+}
+
 /*======LOGO======*/
     .company-logo{
-        height : 50px;
+        height : 55px;
     }
     .company-logo-main{
-        height : 80%;  
-        top : 5px;    
+        height : 80%; 
     }
     .company-logo-name{
-        height : 20px;
-        top : 15px;
-        left : 60px;
-    }
-    
-    .company-subtitle{
-        top : 40px;
-        left : 60px;
-        font-size : 7px;
+        height : 50%;
     }
 
 /*======NAVBAR======*/
@@ -326,25 +336,73 @@ li{
         left : -10000px !important;
     }    
 
-/*======HERO======*/
-    .hero{
-        height : 400px;
-        position: relative;
+/*======INTRO======*/
+    .intro {
+        height : 800px;
         overflow: hidden;
     }
 
-    .hero-img{
-        position: absolute;
-        z-index: -1;
-        width : 100%;
-        
+    .intro-content{
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+      display: block;
     }
 
-    .cover-image{
-        background-image: url("../images/background.jpeg");
-        background-size:cover;
-        background-position: top;
+    .intro-left-text{
+        position: relative;
+        height : 400px;
+        z-index: 1;
     }
+    .intro-left{
+        top : 0;
+        width : 100%
+    }
+
+    .intro-right{
+        top : 400px;
+        width : 100%;
+    }
+
+    @media (min-width: 768px) {
+        .intro {
+            height: 400px;
+            margin-top : 55px !important;
+        }
+        .intro-left,
+        .intro-right{
+            height : 100%;
+            top : 0;
+            width : 50%;
+        }
+        .intro-semi-circle{
+            position: absolute;
+            top : -10%;
+            left : -200px;
+            display : block;
+            height : 120%;
+            width : 400px;
+            background-color: var(--brandcolor-lightest);
+            border-radius: 50%;
+            border : 10px solid rgba(var(--brandcolor-rgb),0.8);
+        }
+
+        .semi-circle-hider{
+            position: absolute;
+            top : -10%;
+            left : -400px;
+            display : block;
+            height : 120%;
+            width : 400px;
+            background-color: var(--brandcolor-lightest);
+        }
+    }  
+
+    .intro-left-text ul li::before{
+        content : "⤷";
+        color : var(--brandcolor);
+        margin-right : 15px;
+    }  
 
     .ndis-logo-container{
         height : 100px;
