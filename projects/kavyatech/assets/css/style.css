@@ -628,7 +628,7 @@ label {
   }
 
 .db-table-wrapper{
-    display: none;
+    transition: 0.5s;
 }
 .db-table {
     border-collapse: collapse;

@@ -51,7 +51,7 @@ $(document).ready(function() {
 
   function animateQuery() {
     $('#sqlText').html('');
-    $('#dbTableWrapper').fadeOut(300);
+    $('#dbTableWrapper').css("opacity",0);
 
     let i = 0;
     const interval = setInterval(() => {
@@ -61,7 +61,7 @@ $(document).ready(function() {
         clearInterval(interval);
 
       setTimeout(() => {
-        $('#dbTableWrapper').fadeIn(500);
+        $('#dbTableWrapper').css("opacity",1);
         setTimeout(animateQuery, pauseBeforeRestartMS);
         }, pauseBeforeTableMS);
       }
