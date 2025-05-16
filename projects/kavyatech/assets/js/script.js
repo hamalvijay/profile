@@ -83,9 +83,9 @@ function initializeContactForm(isBlank) {
 
     formConfig.forEach(fieldRow => {
         if (fieldRow.fields.length > 0) {
-            let formRow = $('<div class="row"></div>');
+            let formRow = $('<div class="row w-100"></div>');
             fieldRow.fields.forEach(field => {
-                let formGroup = $(`<div class="form-group my-2 ${field.class ?? 'col-12'}"></div>`);
+                let formGroup = $(`<div class="form-group ${field.class ?? 'col-12'}"></div>`);
                 formGroup.append(`<label for="${field.id}">${field.label} ${field.required ? '*' : ''}</label>`);
 
                 let inputElement;
@@ -277,7 +277,7 @@ function contactFormConfigDefinition(){
                     id: 'email',
                     name : 'Email address',
                     label: 'Email address',
-                    class: 'col-sm-12 col-md-6',
+                    class: 'col-12 col-md-6',
                     type: 'email',
                     placeholder: 'john.citizen@email.com',
                     value : 'john.citizen@email.com',
@@ -292,7 +292,7 @@ function contactFormConfigDefinition(){
                     name : 'Mobile',
                     label: 'Mobile',
                     type: 'text',
-                    class : 'col-sm-12 col-md-6',
+                    class : 'col-12 col-md-6',
                     placeholder: '',
                     required: true,
                     value : '0452468331',

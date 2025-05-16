@@ -89,12 +89,28 @@ a{
     flex-direction: column;
 }
 
-
 .row {
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+}
+
+
+.text-center{
+    text-align: center;
+}
+.w-100{
+    width: 100%;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.m-auto{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 [class*="col-"] {
@@ -163,6 +179,7 @@ a{
   .col-lg-11 { flex: 0 0 91.66%; max-width: 91.66%; }
   .col-lg-12 { flex: 0 0 100%;   max-width: 100%; }
 }
+
 /* Form Styling */
 
 .form-group {
@@ -188,6 +205,7 @@ label {
     box-sizing: border-box;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 
 .form-control:focus {
     border-color: var(--text-grey);
@@ -442,6 +460,12 @@ label {
     background-image: linear-gradient(rgb(133,133,133),rgb(255,255,255));
     color: transparent;
     background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .section-title{
+        font-size: 3rem;
+    }
 }
 
 .grid-container{
@@ -724,5 +748,16 @@ label {
 
 #dynamicForm{
     margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    #contact .g3{
+        padding : 0.5rem;
+    }
+
+    #contact .g3 .card-title{
+        padding : 0 2rem;
+    }
+    
 }
 
