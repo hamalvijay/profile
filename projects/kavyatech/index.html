@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVYA TECH</title>
+    
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">  -->
+    
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="assets/js/jquery.js"></script>
+</head>
+
+<body>
+
+    <div class="appbar">
+        <div class="logo">
+            <img src="assets/images/logo.svg" class="logo-image">
+        </div>
+    </div>
+
+    <div class="btn btn-menu relative">
+        <div class="hamburger-holder relative">
+            <span class="dash absolute"></span>
+            <span class="dash absolute"></span>
+            <span class="dash absolute"></span>
+        </div>  
+        <div class="spinner-container hide">
+            <div class="spinner-item-list" style="--quantity: 5;">
+                <a href="#home" class="btn spinner-item" style="--index: -1;">
+                    <i class="material-icons spinner-item-icon">home</i>
+                    <span>Home</span>
+                </a>
+                <a href="#aboutus" class="btn spinner-item" style="--index: 0;">
+                    <i class="material-icons spinner-item-icon">info</i>
+                    <span>About</span>
+                </a>
+                <a href="#services" class="btn spinner-item" style="--index: 1;">
+                    <i class="material-icons spinner-item-icon">volunteer_activism</i>
+                    <span>Services</span>
+                </a>
+                <a href="#contact" class="btn spinner-item" style="--index: 2;">
+                    <i class="material-icons spinner-item-icon">mail</i>
+                    <span>Contact</span>
+                </a>
+                <a href="#projects" class="btn spinner-item" style="--index: 3;">
+                    <i class="material-icons spinner-item-icon">workspaces</i>
+                    <span>Projects</span>
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="backdrop hide"></div>
+<style>
+    .text-center{
+        text-align: center;
+    }
+    .w-100{
+        width: 100%;
+    }
+
+    .justify-content-center{
+        justify-content: center;
+    }
+
+    .m-auto{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .experienceColumn{
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border : 2px solid white;
+        border-top : none;
+        padding : 100px 100px;
+        border-bottom-left-radius:200px;
+        border-bottom-right-radius: 200px;
+        inset: 20 20 20 20;
+        font-size: 20px;
+    }
+    .experienceColumn div{
+        margin-bottom : 20px;
+    }
+    #yearsofexperience{
+        font-size: 40px;
+    }
+
+    #home{
+        height : calc(100vh - 60px);
+        
+    }
+
+    .home-container{
+        /* width : 100vw;
+        height : calc(100vh - 60px); */
+        /* background: url("assets/images/background.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; */
+    }
+
+    /* #home .title{
+        font-size: 60px;
+        text-align: left;
+       font-weight: bold;
+    }
+
+    #home .btn{
+
+    } */
+
+
+
+</style>
+
+
+   <div class="content">
+
+        <!-- SERVICES -->
+        <section id="home">
+            <!-- <div class="home-container">
+                
+                    <div class="title">Software Engineering</div>
+                    <div class="row">
+                        <button class="btn">Contact us</button>
+                    </div> 
+                    
+                </div>
+            </div>-->
+        </section>
+
+
+        <!-- ABOUT US -->
+        <section id="aboutus">
+            <div class="section-container">
+                <h1 class="section-title">ABOUT US</h1>
+                
+                <!-- <p>We are an innovative tech company founded on the base of over <strong id="yearsofexperience"></strong> of experience in Information Technology.</p>
+                <p>At Kavya Tech Solutions, we turn innovative ideas into reliable software solutions. Founded by <strong>Vijay Hamal</strong>, an experienced Software Engineer, we specialize in building scalable, robust and user-friendly apps using modern tools and technologies.
+
+                <div class="grid-container">
+                    <div class="card g1">
+                        <h2 class="card-title">Core Values</h2>
+                        <p>Innovation: Delivering creative and effective solutions.
+
+Quality: Building reliable and scalable software.
+
+Integrity: Transparent and honest communication.
+
+Customer Focus: Tailoring solutions to client needs.
+
+Continuous Learning: Staying updated with the latest tech trends.</p>
+                    </div>
+                </div>
+
+Our core values drive everything we do:
+
+
+
+We’re committed to helping your business succeed through technology.</p> -->
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services">
+            <div class="section-container">
+                <h1 class="section-title">SERVICES</h1>
+                <div class="grid-container">
+                    <div class="card g1">
+                        <h2 class="card-title">SOFTWARE</h2>
+                        <p>We provide a wide range of software to the market based on the customer's individual needs. We specialize in complex web or desktop based software solutions. We design and build desktop and enterprise-grade applications tailored to business needs. Our solutions are developed using languages like Java, C#, Python, Flutter, Angular, Visual Basic and ensures performance, scalability, and reliability across various platforms. Newly added to our expertise is Intersystems cache/IRIS development with CSP/Zen Pages and API development.</p>
+                    </div>
+                    <div class="card g2">
+                        <h2 class="card-title">OTHER</h2>
+                        <p>We provide services for both long term and short term projects. Our specialization in full stack development and 100% in-time delivery rate has proven record of customer satisfaction. Our services also include Business Analysis and reporting tools using PowerBI, Crystal Reporting, SSRS, SSIS and use of advanced Excel features.</p>
+                        <div class="sql-query-wrapper">
+                            <div class="sql-query"  id="sqlText">
+                                
+                            </div>
+                        </div>
+                        <div class="db-table-wrapper" id="dbTableWrapper">
+                            <table class="db-table" >
+                                <tr><th>primary_key</th><th>value</th></tr>
+                                <tr><td>1</td><td>Know customer need</td></tr>
+                                <tr><td>2</td><td>Create Prototype</td></tr>
+                                <tr><td>3</td><td>Convert concept to Code</td></tr>
+                                <tr><td>4</td><td>User Testing</td></tr>
+                                <tr><td>5</td><td>Service prepared</td></tr>
+                                <tr><td>6</td><td>Deployment</td></tr>                                
+                            </table>
+                            <div class="message">6 Rows affected.</div>
+                        </div>
+                    </div>
+                    <div class="card g3">
+                        <h2 class="card-title">WEB</h2>
+                        <p>We create responsive and dynamic web applications using HTML, CSS, JavaScript, and frameworks Angular. Our backend development is powered by PHP, Python, C# (.net Core) or Java (Spring Boot). For small organizations, we also provide Google App Script for easy API development.</p>
+                    </div>
+                    
+                    <div class="card g4">
+                        <h2 class="card-title">DATABASE</h2>
+                        <p>We manage, optimize, and secure small to large organizational data across SQL and NoSQL systems. Expertise includes SQL Server, MySQL, PostgreSQL, Google Sheets MongoDB with scripts for SQL and automation handled via Python or shell scripting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- CONTACT -->
+        <section id="contact">
+            <div class="section-container">
+                <h1 class="section-title">CONTACT</h1>
+                <div class="grid-container">
+                    <div class="card g1 map-wrapper">
+                        <div class="map-container">
+                            <iframe 
+                            style="filter: grayscale(90%) invert(100%) contrast(90%)"
+                                width="100%" 
+                                height="600" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                marginheight="0" 
+                                marginwidth="0" 
+                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=263%20Henry%20Parry%20Drive%20North%20Gosford%202250+(KAVYA%20TECH%20SOLUTIONS)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                            </iframe>
+                            <div class="map-overlay"></div>
+                        </div>
+                    </div>
+
+                    <div class="card g2">
+                        <h2 class="card-title">KAVYA TECH SOLUTIONS</h2>
+                        <div class="flex flex-row address">
+                            <i class="material-icons contact-icon">location_on</i>
+                            <div>
+                                <div>263 Henry Parry Drive</div>
+                                <div>North Gosford, 2250</div>
+                                <div>New South Wales</div>
+                                <div>Australia</div>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-row email">
+                            <a href="mailto:contact@vijayhamal.com.np" class="flex flex-row">
+                                <i class="material-icons contact-icon">mail</i>
+                                <div>contact@vijayhamal.com.np</div>
+                            </a>
+                        </div>
+                        <div class="phone flex flex-row">
+                            <a href="tel:+61-452468331"  class="flex flex-row">
+                                <i class="material-icons contact-icon">phone</i>
+                                <div>+61-452468331</div>
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="card g3">
+                        <h2 class="card-title">Get in touch</h2>
+                        <div id="dynamicForm"></div>
+                        <div class="flex-flex-row ">
+                            <button class="btn btn-send-query">Send query</button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="buffer"></section>
+    </div>
+
+    <!-- <div class="scroll-down"></div> -->
+    <!-- <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="assets/images/logo.svg" class="logo-image" alt="KAVYA ">
+                <div class="logo-title">
+                    <div>Tech</div>
+                    <div class="location">
+                        <img src="assets/images/flag_australia.svg" class="flag" alt="BASED IN AUSTRALIA ">
+                    </div>
+                </div>                
+            </div>            
+            <button class="contact-btn">Contact us</button>
+        </header>
+        <main>
+            <div class="title-section">
+                <h1>SOFTWARE SOLUTIONS</h1>                
+            </div>
+            <div class="banner">
+                <div class="robot">
+                    <img class="thinking-robot" src="assets/images/thinking_robot.png" >
+                </div>
+                <div class="slider" style="--quantity:8">
+                    <div class="item" style="--position:1">
+                        <p>Website</p>
+                    </div>
+                    <div class="item" style="--position:2">
+                        <p>iOS App</p>
+                    </div>
+                    <div class="item" style="--position:3">
+                        <p>Android app</p>
+                    </div>
+                    <div class="item" style="--position:4">
+                        <p>Windows app</p>
+                    </div>
+                    <div class="item" style="--position:5">
+                        <p>Database</p>
+                    </div>
+                    <div class="item" style="--position:6">
+                        <p>Domain</p>
+                    </div>
+                    <div class="item" style="--position:7">
+                        <p>Hosting</p>
+                    </div>
+                    <div class="item" style="--position:8">
+                        <p>CRM</p>
+                    </div>
+                    
+                </div>
+            </div>
+           
+            <div class="bio-section">
+                <div class="bio">
+                    WITH OVER <span class="workyears" id="workyears"></span> YEARS OF REFINED EXPERTISE, WE HAVE CREATED SEAMLESS AND INTUITIVE WAY TO CREATE APPLICATIONS AND WEBSITES.
+                </div>
+            </div>
+        </main>
+
+        <section class="section-container">
+            <h1 class="section-title">SERVICES</h1>
+            <div class="grid-container">
+                <div class="card g1">
+                    <h2 class="card-title">Software Development</h2>
+                    <p>We provide a wide range of software to the market based on the customer's individual needs. We specialize in complex web or desktop based software solutions. With the 
+                        We design and build desktop and enterprise-grade applications tailored to business needs. Our solutions are developed using languages like Java, C#, Python, and C++, ensuring performance, scalability, and reliability across platforms.
+
+                    </p>
+                    <img src="assets/images/gradient.png" alt = "" class="card-bg-image">
+                </div>
+                <div class="card g2">
+                    <h2 class="card-title">Database Administration</h2>
+                    <p>We manage, optimize, and secure organizational data across SQL and NoSQL systems. Expertise includes MySQL, PostgreSQL, Oracle, MongoDB, and Microsoft SQL Server, with scripts written in SQL and automation handled via Python or shell scripting.</p>
+                    <img src="assets/images/gradient.png" alt = "" class="card-bg-image">
+                </div>
+                <div class="card g3">
+                    <h2 class="card-title">Web Development</h2>
+                    <p>We create responsive and dynamic web applications using HTML, CSS, JavaScript, and frameworks like React, Angular, and Vue. Backend development is powered by Node.js, PHP, Python (Django/Flask), or Java (Spring Boot).</p>
+                    <img src="assets/images/gradient.png" alt = "" class="card-bg-image">
+                </div>
+                <div class="card g4">
+                    <h2 class="card-title">Other</h2>
+                    <p>We also offer DevOps, cloud infrastructure setup, and testing services. Our team works with AWS, Docker, Jenkins, and Kubernetes, and uses scripting in Bash, Python, and YAML for CI/CD and cloud automation.</p>
+                    <img src="assets/images/gradient.png" alt = "" class="card-bg-image">
+                </div>
+            </div>
+        </section>
+    </div> -->
+</body>
+<script src="assets/js/script.js"></script>
+</html>

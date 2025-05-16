@@ -103,7 +103,7 @@ async function useData(){
         $(careerParentDiv).append(
             `<div class='alert bg-brandcolor-lightest-50 border-0 text-brandcolor'>
                 <p>
-                    Sorry !! no position is available for now. But keep an eye as we are planning for positing new opportunities very soon.
+                    Sorry !! no position is available for now. But keep an eye as we are planning for posting new opportunities very soon.
                 </p>
                 <p>
                     You can also send your resume to <a class='fw-bold text-brandcolor jobs_email' href='mailto:${jobs_email}'>${jobs_email}</a>.
