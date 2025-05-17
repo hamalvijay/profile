@@ -30,6 +30,8 @@ body{
     background: linear-gradient(90deg, rgba(var(--black-rgb),1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(var(--black-rgb),1) 100%);    
     color : var(--white);
     position: relative;
+    max-height: 100vh;
+    overflow : hidden;
 }
 
 *{
