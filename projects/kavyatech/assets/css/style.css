@@ -277,10 +277,10 @@ label {
 /*=====BACKDROP=====*/
 .backdrop{
     position: absolute;
-    top : 0;
+    top : -60px;
     left : 0;
     width : 100%;
-    height : calc(100vh + 60px);
+    height : calc(100% + 60px);
     background-color: rgb(var(--black-rgb), 0.9);
     z-index : 3;
 }
