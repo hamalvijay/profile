@@ -285,6 +285,10 @@ label {
     z-index : 3;
 }
 
+section{
+    padding-top : 70px;
+}
+
 
 /*=====NAVIGATION=====*/
 .logo{
@@ -449,7 +453,6 @@ label {
 
 .section-container{
     width : 100%;
-    margin-top : 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
