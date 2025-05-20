@@ -1,76 +1,115 @@
 
-
-document.querySelectorAll(".card, .spinner-item").forEach(card=>{
-    card.addEventListener("mousemove", e=>{
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty("--x", `${e.clientX - rect.left}px`);
-        card.style.setProperty("--y", `${e.clientY - rect.top}px`);
-    })
-});
-
 $(document).ready(function() {
-  //Years of experience
-  $("#yearsofexperience").html(new Date().getFullYear()-2017);
+    //COG-WHEEL
+    $('[id^="cog-wheel"]').each(function () {
+        const $container = $(this);
+        const id = $container.attr('id');
 
-  //HIDE MENU IF CLICK OUTSIDE IN DOM
-  $(document).click(function (event) {
-    !$(event.target).closest(".btn-menu").length && hideMenu();
-  });
+        const parts = id.split('-');
+        const count = parseInt(parts[2]) || 12; 
+        const directionFlag = parts[3];
 
-  //SHOW HIDE MENU
-  $(".btn-menu").click(function() {
-    $(".spinner-container").hasClass("show") ? hideMenu() : showMenu();
-  });
+        const $cogWheel = $('<div>')
+            .addClass('cog-wheel')
+            .css('--count', count);
 
-  function showMenu() {
-    $(".spinner-container, .backdrop").removeClass("hide").addClass("show");
-    $(".spinner-item").each(function() {
-        $(this).removeClass("appear");
-        $(this).addClass("appear");
+        const $center = $('<div>').addClass('cog-center');
+        $cogWheel.append($center);
+
+        for (let i = 0; i < count; i++) {
+            const $tooth = $('<div>')
+            .addClass('tooth')
+            .css('--i', i)
+            .css('--count', count)
+            .css('transform', `rotate(${(360 / count) * i}deg) translateY(calc(var(--cogwheel-height) / 2))`);
+            $cogWheel.append($tooth);
+        }
+
+        $container.append($cogWheel);
+
+        const teeth = $cogWheel.find('.tooth');
+        teeth.each(function (i) {
+            setTimeout(() => {
+            $(this).addClass('visible');
+            }, i * 150);
+        });
+
+        if (directionFlag === '1') {
+            $cogWheel.addClass('rotate-clockwise');
+        } else if (directionFlag === '0') {
+            $cogWheel.addClass('rotate-anticlockwise');
+        }
     });
-    $(".btn-menu").addClass("open");
-  }
 
-  function hideMenu() {
-    $(".btn-menu").removeClass("open");
-    $(".spinner-container, .backdrop").removeClass("show").addClass("hide");
-  }
-
-
-  //INSERT CARD BACKGROUND IMAGE
-  $(".card").each(function(){
-    $(this).append(`<img src="assets/images/gradient.png" alt = "" class="card-bg-image">`);
-  })
+    //HOVER EFFECT ON CARD
+    $(".card, .spinner-item").on("mousemove", function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        $(this).css("--x", `${x}px`);
+        $(this).css("--y", `${y}px`);
+    });
 
 
-  //ANIMATE SQL and Table
-  const rawText = 'SELECT * FROM [dbo].[tbl_process];';
-  const delayPerCharMS = 100;
-  const pauseBeforeTableMS = 1000;
-  const pauseBeforeRestartMS = 5000;
+    //HIDE MENU IF CLICK OUTSIDE IN DOM
+    $(document).click(function (event) {
+        !$(event.target).closest(".btn-menu").length && hideMenu();
+    });
 
-  function animateQuery() {
-    $('#sqlText').html('');
-    $('#dbTableWrapper').css("opacity",0);
+    //SHOW HIDE MENU
+    $(".btn-menu").click(function() {
+        $(".spinner-container").hasClass("show") ? hideMenu() : showMenu();
+    });
 
-    let i = 0;
-    const interval = setInterval(() => {
-      $('#sqlText').html('<span>' + rawText.slice(0, i + 1) + '<span class="cursor-animated">&nbsp;|</span></span>');
-      i++;
-      if (i === rawText.length) {
-        clearInterval(interval);
+    function showMenu() {
+        $(".spinner-container, .backdrop").removeClass("hide").addClass("show");
+        $(".spinner-item").each(function() {
+            $(this).removeClass("appear");
+            $(this).addClass("appear");
+        });
+        $(".btn-menu").addClass("open");
+    }
 
-      setTimeout(() => {
-        $('#dbTableWrapper').css("opacity",1);
-        setTimeout(animateQuery, pauseBeforeRestartMS);
-        }, pauseBeforeTableMS);
-      }
-    }, delayPerCharMS);
-  }
+    function hideMenu() {
+        $(".btn-menu").removeClass("open");
+        $(".spinner-container, .backdrop").removeClass("show").addClass("hide");
+    }
 
-  animateQuery();
-  initializeContactForm(true);
-});
+
+    //INSERT CARD BACKGROUND IMAGE
+    $(".card").each(function(){
+        $(this).append(`<img src="assets/images/gradient.png" alt = "" class="card-bg-image">`);
+    })
+
+
+    //ANIMATE SQL and Table
+    const rawText = 'SELECT * FROM [dbo].[tbl_process];';
+    const delayPerCharMS = 100;
+    const pauseBeforeTableMS = 1000;
+    const pauseBeforeRestartMS = 5000;
+
+    function animateQuery() {
+        $('#sqlText').html('');
+        $('#dbTableWrapper').css("opacity",0);
+
+        let i = 0;
+        const interval = setInterval(() => {
+            $('#sqlText').html('<span>' + rawText.slice(0, i + 1) + '<span class="cursor-animated">&nbsp;|</span></span>');
+            i++;
+            if (i === rawText.length) {
+            clearInterval(interval);
+
+            setTimeout(() => {
+            $('#dbTableWrapper').css("opacity",1);
+            setTimeout(animateQuery, pauseBeforeRestartMS);
+            }, pauseBeforeTableMS);
+            }
+        }, delayPerCharMS);
+    }
+
+        animateQuery();
+        initializeContactForm(true);
+    });
 
 //CONTACT FORM
 function initializeContactForm(isBlank) {
