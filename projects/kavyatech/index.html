@@ -125,6 +125,131 @@
 
 
 
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #0d0d0d;
+      font-family: monospace;
+      box-sizing: border-box;
+      color: #ffffff;
+    }
+
+    .editor-output {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .editor-output {
+        flex-direction: row;
+      }
+    }
+
+    .editor {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 10px;
+      flex: 1;
+      overflow: auto;
+      min-height: 600px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .line-numbers {
+      color: #666;
+      text-align: right;
+      user-select: none;
+      padding-right: 10px;
+    }
+
+    .line-numbers div {
+      height: 1.5em;
+    }
+
+    .code-content {
+      white-space: pre-wrap;
+      color: #d4d4d4;
+      font-family: monospace;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    /* Syntax highlighting */
+    .tag { color: #569CD6; }
+    .attr { color: #9CDCFE; }
+    .value { color: #CE9178; }
+
+    .output-frame {
+      flex: 1;
+      background: var(--black);
+      border: 2px solid var(--turquoise);
+      border-radius: 12px;
+      box-shadow: 10px 10px 25px rgba(var(--turquoise-rgb), 0.5);
+      color : white;
+      display: flex;
+      flex-direction: column;
+      min-height: 600px;
+    }
+
+    .output-header {
+      background-color: var(--black);
+      padding: 12px 16px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--turquoise);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .output-header-lights{
+        display: flex; flex-direction: row;gap: 6px;
+    }
+
+    .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .circle:hover{
+        cursor: pointer;
+    }
+
+    .red { background-color: #ff5f57; }
+    .yellow { background-color: #ffbd2e; }
+    .green { background-color: #28c840; }
+
+    .output-content {
+      flex: 1;
+      padding: 20px;
+      background-color:var(--black);
+      overflow-y: auto;
+    }
+
+    .output-content h1,
+    .output-content h2,
+    .output-content p,
+    .output-content li {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .output-content ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    .output-content strong {
+      color: var(--white);
+    }
+
+    .code-content div {
+  font-family: monospace;
+  /* white-space: pre; */
+}
+  
 </style>           
 
 
@@ -132,8 +257,40 @@
         <section id="aboutus">
             <div class="section-container">
                 <h1 class="section-title">ABOUT US</h1>
+                  
                 
-                <p>
+
+
+<div class="editor-output">
+    <!-- Code Editor Panel -->
+    <div class="editor">
+        <div class="line-numbers" id="lineNumbers"></div>
+        <div class="code-content" id="codeDisplay"></div>
+    </div>
+
+    <!-- Game-Style Output -->
+    <div class="output-frame">
+        <div class="output-header">            
+            <strong>
+                [ Render Output - Game HUD Mode ]
+            </strong>
+            <div class="output-header-lights">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+            </div>
+        </div>
+        <div class="output-content" id="renderedOutput"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+                <!-- <p>
                     We are an innovative tech company founded on the base of over 8 years of expertise in Information Technology.
                 </p>
                 <p>
@@ -149,7 +306,7 @@
                     Customer Focus: Tailoring solutions to client needs.
                     Continuous Learning: Staying updated with the latest tech trends.
                 </p>
-                <p>We are committed to helping your business succeed through technology.</p>
+                <p>We are committed to helping your business succeed through technology.</p> -->
             </div>          
         </section>
 

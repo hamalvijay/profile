@@ -1,3 +1,103 @@
+  const htmlLines = [
+    `<h1>Kavya Tech Solutions</h1>`,
+    `    <p>We are an innovative tech company founded on the base of over 8 years of expertise in Information Technology.</p>`,
+    `    <p>At Kavya Tech Solutions, we turn innovative ideas into reliable software solutions. Founded by Vijay Hamal, an experienced Software Engineer, we specialize in building scalable, robust, and user-friendly apps using modern tools and technologies.</p>`,
+    `    <br>`,
+    `<h2>Core Values</h2>`,
+    `    <ul>`,
+    `      <li><strong>Innovation:</strong> Delivering creative and effective solutions.</li>`,
+    `      <li><strong>Quality:</strong> Building reliable and scalable software.</li>`,
+    `      <li><strong>Integrity:</strong> Transparent and honest communication.</li>`,
+    `      <li><strong>Customer Focus:</strong> Tailoring solutions to client needs.</li>`,
+    `      <li><strong>Continuous Learning:</strong> Staying updated with the latest tech trends.</li>`,
+    `    </ul>`,
+    `    <br></br>`,
+    `    <p><strong>We are committed to helping your business succeed through technology.</strong></p>`
+  ];
+
+  const codeDisplay = document.getElementById("codeDisplay");
+  const renderedOutput = document.getElementById("renderedOutput");
+  const lineNumbers = document.getElementById("lineNumbers");
+
+  function highlightHTML(html) {
+    return html
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/(&lt;\/?)(\w+)([^&]*?)(&gt;)/g, (_, open, tag, attr, close) => {
+        const highlightedAttrs = attr.replace(/(\w+)=(".*?")/g, (_, name, val) =>
+          `<span class="attr">${name}</span>=<span class="value">${val}</span>`
+        );
+        return `${open}<span class="tag">${tag}</span>${highlightedAttrs}${close}`;
+      });
+  }
+
+  function typeNextChar(debug = false) {
+    if (debug) {
+    let lineCount = 1;
+
+    htmlLines.forEach(line => {
+      // Split into visual lines (optional if you want <li> to have multiple visible lines)
+      const codeLine = document.createElement("div");
+      codeLine.innerHTML = highlightHTML(line);
+      codeDisplay.appendChild(codeLine);
+
+      const lineNum = document.createElement("div");
+      lineNum.textContent = lineCount++;
+      lineNum.style.height = `${codeLine.clientHeight}px`; // match height if needed
+      lineNumbers.appendChild(lineNum);
+
+      renderedOutput.innerHTML += line + '\n';
+    });
+  } else { 
+      let lineIndex = 0;
+      let charIndex = 0;
+      let currentLine = '';
+      let formattedLine = '';
+      let lineCount = 1;
+
+      function typeChar() {
+        if (lineIndex >= htmlLines.length) return;
+
+        const line = htmlLines[lineIndex];
+        currentLine += line[charIndex];
+        charIndex++;
+
+        if (charIndex <= line.length) {
+          const safeHTML = highlightHTML(currentLine);
+          formattedLine = safeHTML;
+          codeDisplay.lastElementChild?.remove();
+          const span = document.createElement("div");
+          span.innerHTML = formattedLine;
+          codeDisplay.appendChild(span);
+          setTimeout(typeChar, 15);
+        } else {
+          renderedOutput.innerHTML += line + '\n';
+
+          const lineNum = document.createElement("div");
+          lineNum.textContent = lineCount++;
+          lineNumbers.appendChild(lineNum);
+
+          const nextLine = document.createElement("div");
+          codeDisplay.appendChild(nextLine);
+          currentLine = '';
+          charIndex = 0;
+          lineIndex++;
+          setTimeout(typeChar, 100);
+        }
+      }
+
+      codeDisplay.appendChild(document.createElement("div"));
+      typeChar();
+    }
+  }
+
+  // Set to true to skip typing animation (instant render)
+  const DEBUG_MODE = false;
+  window.onload = () => typeNextChar(DEBUG_MODE);
+
+
+
+
 
 $(document).ready(function() {
     //COG-WHEEL

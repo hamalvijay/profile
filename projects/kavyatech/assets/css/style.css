@@ -322,6 +322,7 @@ background: radial-gradient(circle,rgba(var(--secondary-rgb), 1) 10%, rgba(var(-
 section{
     scroll-margin-top: 60px;
     margin-top : 60px;
+    padding-bottom : 100px;
 }
 
 
