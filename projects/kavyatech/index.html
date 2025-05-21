@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KAVYA TECH</title>
     <link rel="icon" href="assets/images/logo.svg">    
-    <link rel="stylesheet" href="assets/css/style.css?version=20250520.02"> 
+    <link rel="stylesheet" href="assets/css/style.css?version=20250521.01"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="assets/js/jquery.js?version=20250520.02"></script>
+    <script src="assets/js/jquery.js?version=20250521.01"></script>
 </head>
 
 <body>
@@ -120,193 +120,30 @@
             </div>
         </section>
 
-
- <style>
-
-
-
-    body {
-      margin: 0;
-      padding: 20px;
-      background-color: #0d0d0d;
-      font-family: monospace;
-      box-sizing: border-box;
-      color: #ffffff;
-    }
-
-    .editor-output {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .editor-output {
-        flex-direction: row;
-      }
-    }
-
-    .editor {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 10px;
-      flex: 1;
-      overflow: auto;
-      min-height: 600px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .line-numbers {
-      color: #666;
-      text-align: right;
-      user-select: none;
-      padding-right: 10px;
-    }
-
-    .line-numbers div {
-      height: 1.5em;
-    }
-
-    .code-content {
-      white-space: pre-wrap;
-      color: #d4d4d4;
-      font-family: monospace;
-      line-height: 1.5;
-      flex: 1;
-    }
-
-    /* Syntax highlighting */
-    .tag { color: #569CD6; }
-    .attr { color: #9CDCFE; }
-    .value { color: #CE9178; }
-
-    .output-frame {
-      flex: 1;
-      background: var(--black);
-      border: 2px solid var(--turquoise);
-      border-radius: 12px;
-      box-shadow: 10px 10px 25px rgba(var(--turquoise-rgb), 0.5);
-      color : white;
-      display: flex;
-      flex-direction: column;
-      min-height: 600px;
-    }
-
-    .output-header {
-      background-color: var(--black);
-      padding: 12px 16px;
-      font-size: 14px;
-      border-bottom: 1px solid var(--turquoise);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    .output-header-lights{
-        display: flex; flex-direction: row;gap: 6px;
-    }
-
-    .circle {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-
-    .circle:hover{
-        cursor: pointer;
-    }
-
-    .red { background-color: #ff5f57; }
-    .yellow { background-color: #ffbd2e; }
-    .green { background-color: #28c840; }
-
-    .output-content {
-      flex: 1;
-      padding: 20px;
-      background-color:var(--black);
-      overflow-y: auto;
-    }
-
-    .output-content h1,
-    .output-content h2,
-    .output-content p,
-    .output-content li {
-      color: var(--secondary);
-      margin-bottom: 10px;
-    }
-
-    .output-content ul {
-      list-style: square;
-      padding-left: 20px;
-    }
-
-    .output-content strong {
-      color: var(--white);
-    }
-
-    .code-content div {
-  font-family: monospace;
-  /* white-space: pre; */
-}
-  
-</style>           
-
-
         <!-- ABOUT US -->
         <section id="aboutus">
             <div class="section-container">
-                <h1 class="section-title">ABOUT US</h1>
-                  
-                
-
-
-<div class="editor-output">
-    <!-- Code Editor Panel -->
-    <div class="editor">
-        <div class="line-numbers" id="lineNumbers"></div>
-        <div class="code-content" id="codeDisplay"></div>
-    </div>
-
-    <!-- Game-Style Output -->
-    <div class="output-frame">
-        <div class="output-header">            
-            <strong>
-                [ Render Output - Game HUD Mode ]
-            </strong>
-            <div class="output-header-lights">
-                <div class="circle red"></div>
-                <div class="circle yellow"></div>
-                <div class="circle green"></div>
-            </div>
-        </div>
-        <div class="output-content" id="renderedOutput"></div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-                <!-- <p>
-                    We are an innovative tech company founded on the base of over 8 years of expertise in Information Technology.
-                </p>
-                <p>
-                    At <strong>Kavya Tech Solutions</strong>, we turn innovative ideas into reliable software solutions. Founded by Vijay Hamal, an experienced Software Engineer, we specialize in building scalable, robust, and user-friendly apps using modern tools and technologies.
-                </p>
-                <p>
-                    At Kavya Tech Solutions, we turn innovative ideas into reliable software solutions. Founded by <strong>Vijay Hamal</strong>, an experienced Software Engineer, we specialize in building scalable, robust and user-friendly apps using modern tools and technologies.
-                </p>    
-                <h2 class="card-title">Core Values</h2>
-                <p>Innovation: Delivering creative and effective solutions.
-                    Quality: Building reliable and scalable software.
-                    Integrity: Transparent and honest communication.
-                    Customer Focus: Tailoring solutions to client needs.
-                    Continuous Learning: Staying updated with the latest tech trends.
-                </p>
-                <p>We are committed to helping your business succeed through technology.</p> -->
+                <h1 class="section-title">ABOUT US</h1>  
+                <div class="editor-output relative">
+                    <div class="output-frame">
+                        <div class="output-header">            
+                            <strong class="monospace">
+                                C:\>cmd.exe --build
+                            </strong>
+                            <div class="output-header-lights">
+                                <div class="circle red">-</div>
+                                <div class="circle yellow">☐</div>
+                                <div class="circle green">x</div>
+                            </div>
+                        </div>
+                        <div class="output-content" id="renderedOutput"></div>
+                    </div>
+                    <div class="editor-holder">
+                        <div class="editor">
+                            <div class="code-content" id="codeDisplay"></div>
+                        </div>
+                    </div>
+                </div>
             </div>          
         </section>
 
@@ -461,8 +298,7 @@
             </div>
         </section>
 
-        <section id="buffer"></section>
     </div>
 </body>
-<script src="assets/js/script.js?version=20250520.02"></script>
+<script src="assets/js/script.js?version=20250521.01"></script>
 </html>
