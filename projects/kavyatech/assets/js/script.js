@@ -1,4 +1,6 @@
 const DEBUG_MODE = false;
+const BLANK_FORM = true;
+const SEND_DATA = true;
 
 $(document).ready(function() {
     //ABOUT SECTION TYPING EFFECT
@@ -110,7 +112,7 @@ $(document).ready(function() {
             }
         }, delayPerCharMS);
     }
-    
+
     animateQuery();
     
     //PROJECTS
@@ -166,9 +168,8 @@ $(document).ready(function() {
     $(window).on('resize', updateProjectDisplay);
     updateProjectDisplay();
     
-    initializeContactForm(true);
+    initializeContactForm(BLANK_FORM);
 });
-
 
 //ABOUT US
 const htmlLines = [
@@ -398,17 +399,26 @@ $(document).on('click', '.btn-send-query', function(event){
     }
     let formDataString = keyValuePair.join('&');
     
-    sendData(formDataString, true);
+    sendData(formDataString);
+});
+
+$(document).on('click', '.btn-send-another', function(event){
+    initializeContactForm(BLANK_FORM);
 });
 
 
-function sendData(formDataString, debug){
-    if(debug){
+function sendData(formDataString){
+     $("#contact .radar").show();
+    if(!SEND_DATA){
         console.log(formDataString);
-        showSuccess(); 
+        setTimeout(() => {
+            $("#contact .radar").hide();
+            showSuccess(); 
+        }, 2000);
         return;
     }
-    $("#formProcessingStatus").show();
+   
+    var url = "https://script.google.com/macros/s/AKfycbxM2J9pWwJB_YR0nxJ0aKCp1zgMVdfLHLJFQ1EzBm61mbOrl2SKNhGl1HkYVxiqTH-V/exec";
     fetch(`${url}`, 
         {
             method : "POST",
@@ -425,19 +435,14 @@ function sendData(formDataString, debug){
             showFailure();
         }
     }).then(function (response){
-        if(response.status == 200){
-            $("#formProcessingStatus").hide();
-            showSuccess();
-        }
-        else{
-            $("#formProcessingStatus").hide();
-            showFailure();
-        }
+        $("#contact .radar").hide();
+        response.status == 200 ? showSuccess() : showFailure();
+        
     });
 }
 
 function showSuccess(){
-    $("#dynamicForm").html("<div class='text-success' role='alert'>Your response has been received successfully.</div>");
+    $("#dynamicForm").html("<div class='text-success' role='alert'>Your response has been received successfully.</div><button class='btn btn-send-another'>Send another</button>");
     $(".btn-send-query").hide();
 }
 
@@ -459,7 +464,7 @@ function contactFormConfigDefinition(){
                     type: 'text',
                     placeholder: '',
                     required: true,
-                    value : 'John',
+                    value : 'VIJAY HAMAL',
                     validation: {
                         minLength: 2,
                         errorMessage: 'Too short name'
@@ -477,7 +482,7 @@ function contactFormConfigDefinition(){
                     class: 'col-12 col-md-6',
                     type: 'email',
                     placeholder: 'john.citizen@email.com',
-                    value : 'john.citizen@email.com',
+                    value : 'hamal.vijay@gmail.com',
                     required : true,
                     validation: {
                         regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -510,7 +515,7 @@ function contactFormConfigDefinition(){
                 class : 'col-12',
                 placeholder: '',
                 required: false,
-                value : '',
+                value : 'U1 265 HPD North Gosford, 2250',
                 
             }
             ]
@@ -519,13 +524,13 @@ function contactFormConfigDefinition(){
             fields : [
             {
                 id: 'enquire',
-                name : 'Ask a question',
+                name : 'Query',
                 label: 'Tell us about your query',
                 type: 'textarea',
                 placeholder: 'Type your query here',
                 required: true,
                 rows: 10,
-                value : 'Start typing...',
+                value : 'This is a general enquire text. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
                 validation: {
                     minLength: 1,
                     errorMessage: 'You have not written your query'
