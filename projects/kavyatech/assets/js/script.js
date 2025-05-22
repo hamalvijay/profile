@@ -116,17 +116,24 @@ $(document).ready(function() {
     animateQuery();
     
     //PROJECTS
-    [ 
+    [
+        {
+            title : "Portfolio Website",
+            client : "VIJAY HAMAL",
+            lastUpdated : "Jan 2025",
+            source : "https://vijayhamal.com.np",
+            url : "https://vijayhamal.com.np"
+        },
         {
             title : "Personal Website",
-            client : "Sanjay Hamal",
+            client : "SANJAY HAMAL",
             lastUpdated : "Jun 2022",
             source : "https://hamalsanjay.com.np/",
             url : "https://hamalsanjay.com.np/"
         },
         {
             title : "Company Website",
-            client : "Bloomence Care Services",
+            client : "BLOOMENCE CARE SERVICES",
             lastUpdated : "June 2025",
             source : "https://vijayhamal.com.np/client/aus/0449817274/sample1.html",
             url : "https://vijayhamal.com.np/client/aus/0449817274/sample1.html"
