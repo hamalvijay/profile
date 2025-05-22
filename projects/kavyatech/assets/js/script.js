@@ -110,8 +110,62 @@ $(document).ready(function() {
             }
         }, delayPerCharMS);
     }
-
+    
     animateQuery();
+    
+    //PROJECTS
+    [ 
+        {
+            title : "Personal Website",
+            client : "Sanjay Hamal",
+            lastUpdated : "Jun 2022",
+            source : "https://hamalsanjay.com.np/",
+            url : "https://hamalsanjay.com.np/"
+        },
+        {
+            title : "Company Website",
+            client : "Bloomence Care Services",
+            lastUpdated : "June 2025",
+            source : "https://vijayhamal.com.np/client/aus/0449817274/sample1.html",
+            url : "https://vijayhamal.com.np/client/aus/0449817274/sample1.html"
+        }
+    ].forEach(el=>{
+        var html = `
+            <div class="card project-card">
+                <div class="project-card-top">
+                    <h2 class="card-title">${el.title}</h2>
+                    <div class="project-sample-iframe">
+                        <iframe src="${el.source}"></iframe>
+                    </div>
+                </div>                        
+                <div class="project-card-bottom">                           
+                    <div>Client : ${el.client}</div>
+                    <div>Last Updated : ${el.lastUpdated}</div>
+
+                    <button class="btn flex flex-row justify-content-center align-items-center">                                
+                        <a href="${el.source}" target="_blank" >
+                            <i class="material-icons">open_in_new</i>
+                            <span>&nbsp;&nbsp;Open in new tab</span>
+                        </a>
+                    </button>                            
+                </div>
+            </div>
+            `;
+        $(".project-display").append(html);
+    });
+
+    function updateProjectDisplay() {
+        var $container = $('.project-display');
+        if ($container[0].scrollWidth > $container[0].clientWidth) {
+            $container.css('justify-content', 'start');
+        } else {
+            $container.css('justify-content', 'center');
+        }
+    }
+
+    $(window).on('resize', updateProjectDisplay);
+    updateProjectDisplay();
+    
     initializeContactForm(true);
 });
 
