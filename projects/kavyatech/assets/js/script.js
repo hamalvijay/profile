@@ -1,3 +1,8 @@
+//PARTICLE GENERATION
+import { startParticle } from './particle.js';
+
+startParticle();
+
 const DEBUG_MODE = false;
 const BLANK_FORM = true;
 const SEND_DATA = true;
@@ -547,5 +552,7 @@ function contactFormConfigDefinition(){
         },
     ];        
 }
+
+
 
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Particle Generator</title>
+  <style>
+    html, body { margin: 0; overflow: hidden; background: #000; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+let particles = [];
+let lastMousePos = { x: canvas.width / 2, y: canvas.height / 2 };
+let mouseInside = false;
+
+canvas.addEventListener("mousemove", (e) => {
+  lastMousePos.x = e.clientX;
+  lastMousePos.y = e.clientY;
+  mouseInside = true;
+});
+
+canvas.addEventListener("mouseleave", () => {
+  mouseInside = false;
+});
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+class Particle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    const angle = Math.random() * 2 * Math.PI;
+    const speed = Math.random() * 2 + 1;
+    this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed;
+    this.radius = Math.random() * 2 + 1;
+    this.life = 1;
+  }
+
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    const dx = this.x - canvas.width / 2;
+    const dy = this.y - canvas.height / 2;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    const maxDist = Math.min(canvas.width, canvas.height) / 2;
+    this.life = 1 - dist / maxDist;
+    return this.life > 0;
+  }
+
+  draw(ctx) {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255, 255, 255, ${this.life})`;
+    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+}
+
+function generateParticles(count) {
+  for (let i = 0; i < count; i++) {
+    particles.push(new Particle(lastMousePos.x, lastMousePos.y));
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles = particles.filter(p => p.update());
+  particles.forEach(p => p.draw(ctx));
+  requestAnimationFrame(animate);
+}
+
+// Emit 10 particles every millisecond from last known mouse position
+setInterval(() => generateParticles(10), 0.1);
+
+animate();
+</script>
+</body>
+</html>
