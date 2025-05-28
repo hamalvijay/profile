@@ -398,11 +398,17 @@ section {
         }
     }  
 
-    .intro-left-text ul li::before{
+    /* .intro-left-text ul li::before{
         content : "⤷";
         color : var(--brandcolor);
         margin-right : 15px;
-    }  
+    }   */
+
+    .bullet>*::before{
+         content : "⤷";
+        color : var(--brandcolor);
+        margin-right : 15px;
+    }
 
     .ndis-logo-container{
         height : 100px;

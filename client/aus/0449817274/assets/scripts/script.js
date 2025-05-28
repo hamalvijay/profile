@@ -1,5 +1,8 @@
 var url = "https://script.google.com/macros/s/AKfycbxOZr4194GZ5GeNbmlqMn89_ENS_AYVElSTPk6v9HtvW7pWipQbacQNN2OD7ahvF3Eo/exec";
 
+const DEBUG = false;
+const MOCK_DATA = false;
+
 $(document).ready(function(){
     useData();
     // MENU
@@ -27,6 +30,9 @@ $(document).ready(function(){
         $("#menu-dropdown-toggle").removeClass("open");
     }
 
+    //SERVICES
+    initializeCarousel();
+
     //CONTACT
     initializeContactForm(true);
 
@@ -36,6 +42,56 @@ $(document).ready(function(){
 
 
 });
+
+function initializeCarousel(){
+    var carouselData = getCarouselData();
+    carouselData.forEach(data=>{
+        var sectionId = data["id"];
+        if ($('#' + sectionId).length) {
+            var carouselId = "carousel_interval_"+sectionId;
+            var carouselIndicators = '<div class="carousel-indicators">';
+            var carouselInner = '<div class="carousel-inner">';
+            
+            data["items"].forEach((item,index)=>{
+                carouselIndicators += `<button type="button" data-bs-target="#carousel_captions_${sectionId}" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" ${index === 0 ? 'aria-current="true"' : ''} aria-label="Slide ${index + 1}"></button>`;
+            
+                carouselInner += `
+                    <div class="carousel-item ${index === 0 ? 'active' : ''}" data-bs-interval="${data.interval}">
+                        <img src="${item.image}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 >${item.title}</h1>
+                            <p >${item.subtitle}</p>
+                        </div>
+                        <div class="text-center p-3 d-block d-md-none ">
+                            <h1>${item.title}</h1>
+                            <p >${item.subtitle}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            carouselIndicators += '</div>';
+            carouselInner += '</div>';
+
+            var carouselButtonPrev = `
+            <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>`;
+            var carouselButtonNext = `            
+                        <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+            `;
+
+            $('#' + carouselId).append(carouselIndicators);
+            $('#' + carouselId).append(carouselInner);
+            $('#' + carouselId).append(carouselButtonPrev);
+            $('#' + carouselId).append(carouselButtonNext);
+        }
+    })
+}
 
 async function getData(){
     try{
@@ -52,7 +108,7 @@ async function getData(){
 }
 
 async function useData(){
-    let db = await getData();
+    let db = MOCK_DATA ? mockData() : await getData();
     $(".dataLoading").toggleClass("hide");
     
     //CONTACT ICONS
@@ -101,17 +157,25 @@ async function useData(){
     var careerParentDiv = "#careerScroller";
     if(career==null || career?.length==0){
         $(careerParentDiv).append(
-            `<div class='alert bg-brandcolor-lightest-50 border-0 text-brandcolor'>
+            `<div class='alert bg-white border-0'>
                 <p>
-                    Sorry !! no position is available for now. But keep an eye as we are planning for posting new opportunities very soon.
+                    Currently, we have no positions available. But keep an eye as we are planning to post new opportunities very soon.
                 </p>
                 <p>
-                    You can also send your resume to <a class='fw-bold text-brandcolor jobs_email' href='mailto:${jobs_email}'>${jobs_email}</a>.
+                    Alternatively, feel free to send your details to us at <a class='fw-bold text-brandcolor jobs_email' href='mailto:${jobs_email}'>${jobs_email}</a> with:
+                    <div class='px-5 py-2 bullet'>
+                        <div>Name</div>
+                        <div>Email address</div>
+                        <div>Resume (mandatory)</div>
+                        <div>Cover letter (optional)</div>
+                    </div>
+                    <div class='fst-italic mt-3'>Please sepecify why you would want to work for us in not less than 100 words.</div>
                 </p>
             </div>
             `);
     }
     else{
+        $(careerParentDiv).append(`<h5 class='text-center text-brandcolor'>Opportunities available:</h5>`);
         career.forEach(c=>{
             var div = `
                     <div class="accordion-item border-0 shadow-sm">
@@ -243,13 +307,7 @@ function getConnectionIcon(type, href){
             </a>
             `;
         default : return "";
-    }
-
-    
-                                
-                                
-                                
-                                
+    }                           
 }
 
 //CONTACT FORM
@@ -567,7 +625,7 @@ function mockData(){
             },
             {
                 "key": "linkedin",
-                "value": "https://www.linkedin.com/in/vijayhamal/"
+                "value": null
             },
             {
                 "key": "facebook",
@@ -579,11 +637,11 @@ function mockData(){
             },
             {
                 "key": "youtube",
-                "value": "https://www.youtube.com/"
+                "value": "www.youtube.com"
             },
             {
                 "key": "instagram",
-                "value": "https://www.instagram.com"
+                "value": null
             },
             {
                 "key": "jobs_email",
@@ -594,7 +652,7 @@ function mockData(){
                 "value": "0412345678"
             }
         ],
-         "career": [
+        "career": [
             {
                 "id": "Bloomence0512",
                 "posted date": "2025-05-12",
@@ -609,7 +667,7 @@ function mockData(){
                 ],
                 "location": "Ballarat, VIC",
                 "job type": "Casual",
-                "salary": "TBA",
+                "salary": 100000,
                 "experience": "Previous experience in disability support or a similar role",
                 "education": "Relevant qualification (e.g., Certificate III or IV in Disability, Individual Support, Community Services)",
                 "other requirements": [
@@ -621,52 +679,56 @@ function mockData(){
                 ],
                 "expiry date": "2025-06-15",
                 "active": "y"
+            },
+            {
+                "id": "Bloomence0401",
+                "posted date": "2025-04-01",
+                "title": "Backend Developer",
+                "description": "Responsible for building and maintaining server-side applications and APIs using Node.js and MongoDB.",
+                "details": [
+                    "Design, implement, and maintain RESTful APIs and backend services using Node.js and Express.js. Work with MongoDB and Mongoose to model, store, and retrieve data efficiently.",
+                    "Implement robust authentication, authorization, and role-based access control using JSON Web Tokens (JWT) and OAuth.",
+                    "Optimize backend performance through indexing, caching strategies (Redis), and query optimization. Ensure systems are scalable and maintainable for long-term growth.",
+                    "Use Git, Docker, and CI/CD tools to automate deployment and testing workflows. Collaborate with DevOps to manage cloud-based infrastructure using AWS, Azure, or Google Cloud.",
+                    "Participate in design reviews, sprint planning, and agile ceremonies to deliver reliable software on time."
+                ],
+                "location": "Remote",
+                "job type": "Full-time",
+                "salary": 50000,
+                "experience": "3+ years backend",
+                "education": "Bachelor's in Computer Science",
+                "other requirements": "Node.js, MongoDB, REST API",
+                "expiry date": "2025-06-20",
+                "active": "y"
             }
         ],
-        "rating": [
-            {
-                "Full Name": "Alice Johnson",
-                "Review": "Excellent service, very responsive and professional.",
-                "Rating": 5,
-                "received date": "2025-01-01 12:00:00",
-                "active": "y"
-            },
-            {
-                "Full Name": "Brian Smith",
-                "Review": "The experience was smooth, but there’s room for improvement.",
-                "Rating": 4,
-                "received date": "2025-01-01 12:00:00",
-                "active": "y"
-            },
-            {
-                "Full Name": "Catherine Lee",
-                "Review": "Not satisfied with the communication.",
-                "Rating": 2,
-                "received date": "2025-01-01 10:00:00",
-                "active": "y"
-            },
-            {
-                "Full Name": "David Martinez",
-                "Review": "Great value for money, would definitely recommend.",
-                "Rating": 5,
-                "received date": "2025-01-01 12:00:00",
-                "active": "y"
-            },
-            {
-                "Full Name": "Emma Thompson",
-                "Review": "Decent experience, but had to wait longer than expected.",
-                "Rating": 3,
-                "received date": "2025-01-01 12:00:00",
-                "active": "y"
-            },
-            {
-                "Full Name": "Faisal Ahmed",
-                "Review": "Absolutely amazing! Quick turnaround and friendly support.",
-                "Rating": 5,
-                "received date": "2025-01-01 12:00:00",
-                "active": "y"
-            }
-        ]
+        "rating": []
     }
 };
+}
+
+function getCarouselData(){
+    return [
+        {
+        "id":"services",
+        "interval":3000,
+        "items":[
+            {
+                "image":"assets/images/service1.jpg",
+                "title":"Assistance with Self Care Activities",
+                "subtitle":"We provide support in maintaining independence and well being"
+            },
+            {
+                "image":"assets/images/service2.jpg",
+                "title":"Access Community, Social and Recreational Activities",
+                "subtitle":"We provide support in engaging in a wide range of activities from attending local events to joining sports clubs and any other activities in the community"
+            },
+            {
+                "image":"assets/images/service3.jpg",
+                "title":"Assistance with Personal Domestic Activities",
+                "subtitle":"We provide support in daily living tasks within a home such as cleaning, laundry, meal preparation etc"
+            },
+            ]
+        }
+    ];
 }
