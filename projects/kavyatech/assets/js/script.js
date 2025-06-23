@@ -150,9 +150,9 @@ $(document).ready(function() {
         },
         {
             title : "Company Website",
-            client : "Bloomence Care Services - Sample2",
+            client : "Bloomence Care Services - Sample3",
             lastUpdated : "Jun 2025",
-            source : "https://www.vijayhamal.com.np/client/aus/bloomencecare/sample1/",
+            source : "https://www.vijayhamal.com.np/client/aus/bloomencecare/sample3/",
         }
     ].forEach(el=>{
         var html = `
