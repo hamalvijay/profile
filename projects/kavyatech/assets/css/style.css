@@ -453,7 +453,19 @@ section{
     height : 300px;
     width: 300px;
     background-color: transparent;
-    
+}
+
+.spinner-container .show {
+  animation: slideSpinnerContainer 2s ease-in-out;
+}
+
+@keyframes slideSpinnerContainer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1003,6 +1015,7 @@ section{
 {
     margin-bottom: 2rem;
     line-height: 1.2;
+    list-style: none;
 }
 
 .output-content li{
@@ -1016,11 +1029,11 @@ section{
 }
 
 .output-content ul {
-    list-style: square;
     padding-left: 20px;
 }
 
-.output-content strong {
+.output-content .fw-bold {
+    font-weight: bold;
     color: var(--white);
 }
 
@@ -1032,22 +1045,22 @@ section{
     font-size : 3rem;
     padding : 1rem 0;
     color : var(--brandcolor) !important;
+    position: relative;
 }
 
 .digitize::before{
-    content: "<        ";
+    content: "{       ";
 }
 
 .digitize::after{
-    content: "         >";
+    content: "       }";
 }
 
 .digitize::before,
 .digitize::after
 {
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 100;
-    vertical-align:baseline;
 }
 
 .yearsofexpertise{

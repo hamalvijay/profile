@@ -3,8 +3,8 @@ export function startParticles(followMouse) {
     const canvas = document.querySelector(".canvas");
     const ctx = canvas.getContext("2d");
 
-    const MAX_PARTICLES = 500;
-    const PARTICLES_PER_FRAME = 5;
+    const MAX_PARTICLES = 5;
+    const PARTICLES_PER_FRAME = 1;
     const FOLLOW_MOUSE = followMouse ?? false;
 
     let lastMousePos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -36,7 +36,7 @@ export function startParticles(followMouse) {
         const speed = Math.random() * 0.5 + 1;
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
-        this.radius = Math.random() * 2 + 1;
+        this.radius = Math.random() * 20 + 1;
         this.life = 1;
       }
 
@@ -62,7 +62,7 @@ export function startParticles(followMouse) {
         if (!this.active) return;
         ctx.beginPath();
         ctx.fillStyle = `rgba(${turquoiseRGB}, ${this.life})`;
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, this.radius, 0, 50 * Math.PI);
         ctx.fill();
       }
     }

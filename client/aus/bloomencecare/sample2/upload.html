@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload File to Google Apps Script</title>
+</head>
+<body>
+  <h2>Apply for the Job</h2>
+  <form id="uploadForm">
+    <label>First Name*
+      <input type="text" name="firstname" id="firstname" required>
+    </label>
+    <label>Last Name*
+      <input type="text" name="lastname" id="lastname" required>
+    </label>
+    <label>Mobile*
+      <input type="tel" name="mobile" id="mobile" required >
+    </label>
+    <label>Email*
+      <input type="email" name="email" id="email" required >
+    </label>
+
+    <!-- Hidden Job ID -->
+    <input type="hidden" name="jobid" id="jobid" value="BC_JOB_001">
+
+    <label>Cover Letter (PDF/DOC/DOCX)*
+      <input type="file" name="coverletter" id="coverletter" accept=".pdf,.doc,.docx">
+      <div class="error" id="coverletterError"></div>
+    </label>
+
+    <label>Resume (PDF/DOC/DOCX)*
+      <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx">
+      <div class="error" id="resumeError"></div>
+    </label>
+
+    <button type="submit" id="submitBtn" disabled>Submit Application</button>
+  </form>
+
+  <div id="response" style="margin-top: 1rem;"></div>
+
+
+  <script>
+    var url = "https://script.google.com/macros/s/AKfycbxOZr4194GZ5GeNbmlqMn89_ENS_AYVElSTPk6v9HtvW7pWipQbacQNN2OD7ahvF3Eo/exec";
+    
+    const MAX_SIZE_MB = 2;
+    const MAX_SIZE = MAX_SIZE_MB * 1024 * 1024;
+
+    const form = document.getElementById("uploadForm");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const coverletterInput = document.getElementById("coverletter");
+    const resumeInput = document.getElementById("resume");
+    const coverletterError = document.getElementById("coverletterError");
+    const resumeError = document.getElementById("resumeError");
+
+    function validateFileSize(input, errorDiv) {
+      const file = input.files[0];
+      if (file && file.size > MAX_SIZE) {
+        errorDiv.textContent = `File too large. Max ${MAX_SIZE_MB}MB allowed.`;
+        return false;
+      }
+      errorDiv.textContent = "";
+      return true;
+    }
+
+    function validateForm() {
+      const isValid =
+        form.firstname.value.trim() &&
+        form.lastname.value.trim() &&
+        form.mobile.value.trim() &&
+        form.email.value.trim()
+        &&
+        validateFileSize(coverletterInput, coverletterError) &&
+        validateFileSize(resumeInput, resumeError);
+
+      submitBtn.disabled = !isValid;
+    }
+
+    // Attach validation to inputs
+    form.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", validateForm);
+      input.addEventListener("change", validateForm);
+    });
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData();
+      formData.append("firstname", form.firstname.value.trim());
+      formData.append("lastname", form.lastname.value.trim());
+      formData.append("mobile", form.mobile.value.trim());
+      formData.append("email", form.email.value.trim());
+      formData.append("jobid", form.jobid.value.trim());
+
+      const files = [
+        { field: "coverletter", input: coverletterInput },
+        { field: "resume", input: resumeInput },
+      ];
+
+      for (const { field, input } of files) {
+        const file = input.files[0];
+        const base64 = await fileToBase64(file);
+        formData.append(field, base64);
+        formData.append(`${field}_name`, file.name);
+        formData.append(`${field}_type`, file.type);
+      }
+
+      formData.forEach((value, key) => {
+  console.log(`${key}:`, value);
+});
+
+      try {
+        const response = await fetch(`${url}?route=application`, {
+          method: "POST",
+          body: formData,
+        });
+        const text = await response.text();
+        document.getElementById("response").innerText = text;
+        form.reset();
+        validateForm();
+      } catch (err) {
+        document.getElementById("response").innerText = "Upload failed: " + err.message;
+      }
+    });
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result.split(",")[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,11 +1,13 @@
 //PARTICLE GENERATION
 import { startParticles } from './particle.js';
 
-startParticles(false);
-
-const DEBUG_MODE = false;
+const DEBUG_MODE = true;
 const BLANK_FORM = true;
 const SEND_DATA = true;
+const PARTICLE_FOLLOW_MOUSE = true;
+startParticles(PARTICLE_FOLLOW_MOUSE);
+
+
 
 $(document).ready(function() {
     //ABOUT SECTION TYPING EFFECT
@@ -127,21 +129,30 @@ $(document).ready(function() {
             client : "VIJAY HAMAL",
             lastUpdated : "Jan 2025",
             source : "https://vijayhamal.com.np",
-            url : "https://vijayhamal.com.np"
         },
         {
             title : "Personal Website",
             client : "SANJAY HAMAL",
             lastUpdated : "Jun 2022",
             source : "https://hamalsanjay.com.np/",
-            url : "https://hamalsanjay.com.np/"
         },
         {
             title : "Company Website",
-            client : "BLOOMENCE CARE SERVICES",
-            lastUpdated : "June 2025",
-            source : "https://vijayhamal.com.np/client/aus/0449817274/sample1.html",
-            url : "https://vijayhamal.com.np/client/aus/0449817274/sample1.html"
+            client : "Bloomence Care Services",
+            lastUpdated : "Jun 2025",
+            source : "https://www.bloomencecare.com.au",
+        },
+        {
+            title : "Company Website",
+            client : "Bloomence Care Services - Sample1",
+            lastUpdated : "Mar 2025",
+            source : "https://www.vijayhamal.com.np/client/aus/bloomencecare/sample1/",
+        },
+        {
+            title : "Company Website",
+            client : "Bloomence Care Services - Sample2",
+            lastUpdated : "Jun 2025",
+            source : "https://www.vijayhamal.com.np/client/aus/bloomencecare/sample1/",
         }
     ].forEach(el=>{
         var html = `
@@ -185,17 +196,17 @@ $(document).ready(function() {
 
 //ABOUT US
 const htmlLines = [
-  `<h1 class="digitize">Kavya Tech </h1>`,
+  `<h1 class="digitize">Kavya Tech</h1>`,
   `    <p>We are an innovative tech company founded on the base of over <span class="yearsofexpertise">${new Date().getFullYear() - 2017} years</span> of expertise in Information Technology.</p>`,
   `    <p>At Kavya Tech Solutions, we turn innovative ideas into reliable software solutions. Founded by <a class="profile-link" href="https://vijayhamal.com.np"><strong>Vijay Hamal</strong></a>, an experienced Software Engineer, we specialize in building scalable, robust, and user-friendly apps using modern tools and technologies.</p>`,
   `    <br>`,
-  `<h2  class="core-values">Core Values</h2>`,
+  `<h2  class="fw-bold fst-italic">Core Values</h2>`,
   `    <ul>`,
-  `      <li><strong>Innovation:</strong> Delivering creative and effective solutions.</li>`,
-  `      <li><strong>Quality:</strong> Building reliable and scalable software.</li>`,
-  `      <li><strong>Integrity:</strong> Transparent and honest communication.</li>`,
-  `      <li><strong>Customer Focus:</strong> Tailoring solutions to client needs.</li>`,
-  `      <li><strong>Continuous Learning:</strong> Staying updated with the latest tech trends.</li>`,
+  `      <li><span class="fw-bold fst-italic">Innovation:</span> Delivering creative and effective solutions.</li>`,
+  `      <li><span class="fw-bold fst-italic">Quality:</span> Building reliable and scalable software.</li>`,
+  `      <li><span class="fw-bold fst-italic">Integrity:</span> Transparent and honest communication.</li>`,
+  `      <li><span class="fw-bold fst-italic">Customer Focus:</span> Tailoring solutions to client needs.</li>`,
+  `      <li><span class="fw-bold fst-italic">Continuous Learning:</span> Staying updated with the latest tech trends.</li>`,
   `    </ul>`,
   `    <br></br>`,
   `    <p><strong>We are committed to helping your business succeed through technology.</strong></p>`
@@ -215,7 +226,8 @@ function highlightHTML(html) {
         return `<span class="attr">${name}</span>=<span class="value">"${val}"</span>`;
       });
 
-      const highlightedClose = `<span class="bracket">&gt;</span>`;
+      const highlightedClose = `<span class="bracket">${close}</span>`;
+
       return `${highlightedOpen}<span class="tag">${tag}</span>${highlightedAttrs}${highlightedClose}`;
     });
 }
@@ -223,7 +235,6 @@ function highlightHTML(html) {
 function typeNextChar(debug = false) {
   const $codeDisplay = $("#codeDisplay");
   const $renderedOutput = $("#renderedOutput");
-
   if (debug) {
     let lineCount = 1;
     $.each(htmlLines, function(_, line) {
@@ -259,10 +270,10 @@ function typeNextChar(debug = false) {
         $currentLineDiv.append($lineNum).append($codeContent);
         $codeDisplay.append($currentLineDiv);
       }
-
+      
       $codeContent.html(highlightHTML(currentLine));
 
-      if (charIndex <= line.length) {
+      if (charIndex < line.length) {
         setTimeout(typeChar, 5);
       } else {
         $renderedOutput.append(line + '\n');
