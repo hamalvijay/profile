@@ -1,7 +1,7 @@
 //PARTICLE GENERATION
 import { startParticles } from './particle.js';
 
-const DEBUG_MODE = true;
+const DEBUG_MODE = false;
 const BLANK_FORM = true;
 const SEND_DATA = true;
 const PARTICLE_FOLLOW_MOUSE = true;

@@ -1303,20 +1303,22 @@ section{
 
     .team-item {
         position : relative;
-        left: 90px !important;
+        left: 45px !important;
         transform: none;
         margin-bottom: 50px;
         width: 80vw;
     }
 
     .curve-connector {
-        left: -90px;
+        height : 45px;
+        width : 45px;
+        left: -45px;
         top: 20px;
         position: absolute;
     }
 
     .team-item:nth-child(even) .curve-connector{
-        left : -90px;
+        left : -45px;
         transform: rotate(0deg);
     }
 
