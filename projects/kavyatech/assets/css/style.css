@@ -475,7 +475,7 @@ section{
 }
 
 .spinner-item-list {
-    --radius: 100px;
+    --radius: 120px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1196,6 +1196,238 @@ section{
     font-family: monospace;
     margin-top : 15px;
 }
+
+/*===== TEAMS =====*/
+
+.team-container{
+    position: relative;
+    width : 800px;
+    
+}
+
+.middle-line{
+    position : absolute;
+    width : 10px;
+    background-color: var(--turquoise);
+    left : 50%;
+    border-radius: 5px;
+}
+
+.curve-connector {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border: 9px solid var(--turquoise);
+    border-top: none;
+    border-right: none;
+    border-radius: 0 0 0 90px;
+    top: calc(50% - 45px + 10px);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.team-item:nth-child(even) .curve-connector {
+  left: 100%;
+  transform: translateY(-50%) rotateY(180deg);
+}
+
+.team-item:nth-child(odd) .curve-connector {
+  right: 100%;
+  transform: translateY(-50%);
+}
+
+.team-item{
+    display : flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width : 300px;
+    border : 1px solid var(--turquoise);
+    border-radius: 10px;
+    padding: 30px 30px;
+
+    position: absolute;
+    top : 50%;
+    transform: translateY(-50%);
+}
+
+.team-item:nth-child(even){
+    right: 55%;
+}
+
+.team-item:nth-child(odd){
+    left : 55%;
+}
+
+
+.team-item:hover{
+    cursor:pointer;
+    background-color: rgba(var(--turquoise-rgb),0.8);
+    color : var(--black);
+    transition: all 0.5s;
+}
+.team-name{
+    font-size : 20px;
+    font-weight: bold;
+
+}
+.team-image{
+    height : 100px;
+    width : 100px;
+    margin : 10px 0;
+    border-radius: 50%;
+    padding : 2px;
+}
+.team-position{
+    font-size : 15px;
+    padding : 5px 0;
+}
+.team-subtitle{
+    font-size: 12px;
+}
+
+@media (max-width : 800px){
+    .team-container {
+        width : 95vw;
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+        position: relative;
+    }
+
+    .middle-line {
+        left : 5px;
+        transform: none;
+        margin-left : 0;
+    }
+
+    .team-item {
+        position : relative;
+        left: 90px !important;
+        transform: none;
+        margin-bottom: 50px;
+        width: 80vw;
+    }
+
+    .curve-connector {
+        left: -90px;
+        top: 20px;
+        position: absolute;
+    }
+
+    .team-item:nth-child(even) .curve-connector{
+        left : -90px;
+        transform: rotate(0deg);
+    }
+
+    
+    .team-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* .tree{
+    background-color: #1d2829;
+    min-width: 800px;
+    overflow : auto;
+}
+.tree ul {
+  padding-top: 20px; 
+  position: relative;
+  transition: all 0.5s;
+}
+.tree > ul::before {
+  display: none;
+}
+.tree ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid rgba(var(--turquoise-rgb),0.5);
+  width: 0;
+  height: 20px;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  transition: all 0.5s;
+}
+
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%; 
+  border-top: 1px solid rgba(var(--turquoise-rgb),0.5);
+  width: 50%; 
+  height: 20px;
+}
+
+.tree li::after {
+  right: auto; 
+  left: 50%; 
+  border-left: 1px solid rgba(var(--turquoise-rgb),0.5);
+}
+
+.tree li:only-child::before,
+.tree li:only-child::after {
+  display: none;
+}
+
+.tree li:only-child {
+  padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+
+.tree li:last-child::before {
+  border-right: 1px solid rgba(var(--turquoise-rgb),0.5);
+  border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.tree li > a {
+  border: 1px solid rgba(var(--turquoise-rgb),0.5);
+  padding: 30px;
+  text-decoration: none;
+  color: var(--white);
+  font-family: arial, verdana, tahoma;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: all 0.5s;
+  width : 100%;
+}
+
+.tree li > a:hover {
+  background: var(--turquoise);
+  color: var(--black);
+  border: none;
+}
+
+.team-image{
+    height : 50px;
+    width : 50px;
+    margin : 10px 0;
+    border-radius: 50%;
+    padding : 2px;
+}
+
+.tree li > a  {
+    color : red;
+} */
 
 /*===== PROJECTS =====*/
 .project-display{

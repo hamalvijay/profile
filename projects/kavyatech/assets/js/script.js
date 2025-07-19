@@ -7,8 +7,6 @@ const SEND_DATA = true;
 const PARTICLE_FOLLOW_MOUSE = true;
 startParticles(PARTICLE_FOLLOW_MOUSE);
 
-
-
 $(document).ready(function() {
     //ABOUT SECTION TYPING EFFECT
     typeNextChar(DEBUG_MODE);
@@ -55,7 +53,7 @@ $(document).ready(function() {
     });
 
     //HOVER EFFECT ON CARD
-    $(".card, .spinner-item").on("mousemove", function(e) {
+    $(".card, .spinner-item, .team-item").on("mousemove", function(e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -121,6 +119,96 @@ $(document).ready(function() {
     }
 
     animateQuery();
+
+    const image = "assets/images/profile.jpg";
+
+    // TEAMS
+
+    function createTeams(){
+        let $teamContainer = $("#team-container");
+        $teamContainer.html(`<div class="middle-line"></div>`);
+        const teams = [
+            {name : "GANGA BHUJEL", title :"CHIEF EXECUTIVE OFFICER", subtitle : "Founder", image : "assets/images/ganga.jpg", url:null},
+            {name : "VIJAY HAMAL", title :"FOUNDER", subtitle : "Senior Software Engineer", image : "assets/images/profile.jpg",url : "https://www.vijayhamal.com.np/"},
+            {name : "SANJAY HAMAL", title :"DATA ANALYST", subtitle : "DBA and Data analyst", image : "assets/images/sanjay.jpg", url : "https://hamalsanjay.com.np/"},
+        ];
+        $.each(teams, function(_, team) {
+           let html = `
+                <a class="team-item" href="${team.url}" target="_blank">
+                    <div class="curve-connector"></div>
+                    <div class="team-name">${team.name}</div>
+                    <img class="team-image" src="${team.image}">
+
+                    <div class="team-position">${team.title}</div>
+                    <div class="team-subtitle">${team.subtitle}</div>
+                </a>
+            `;
+            $teamContainer.append(html);
+        });
+
+        adjustTeamsCss();
+    }
+    function adjustTeamsCss(){
+        const $items = $(".team-container .team-item");
+        const $container = $(".team-container");
+
+        const isMobile = $(window).width() <= 800;
+        let topOffset = isMobile ? 50 : 200;
+        const gap = 20;
+
+        let lastBottom = 0;
+
+        $items.each(function (index) {
+            const $item = $(this);
+            const isEven = (index + 1) % 2 === 0;
+
+            // Reset and set position
+            $item.css({
+                position: "absolute",
+                top: 0,
+                left: "",
+                right: ""
+            });
+
+            // Side placement
+            if (isEven) {
+                $item.css("left", "calc(50% + 90px - 5px)");
+            } else {
+                $item.css("right", "calc(50% + 90px - 5px)");
+            }
+
+            // Apply vertical positioning
+            $item.css("top", topOffset + "px");
+
+            // Update for next
+            const itemHeight = $item.outerHeight(true);
+            topOffset += itemHeight + gap;
+
+            // Track furthest bottom
+            const curveBottom = topOffset; // You may include extra if curve-connector overflows
+            if (curveBottom > lastBottom) {
+                lastBottom = curveBottom;
+            }
+        });
+
+        // Update container height
+        $container.css("height", lastBottom + "px");
+
+        // Set middle line height to reach the last curve-connector
+        $(".middle-line").css({
+            height: (lastBottom - 200 - 50 - (isMobile ? 40 : 95) ) + "px",
+            top: "0",
+            transform: "translateX(-50%)"
+        });
+    }
+
+    createTeams();
+
+    $(window).on("resize", function () {
+        createTeams();
+    });
+            
+    
     
     //PROJECTS
     [

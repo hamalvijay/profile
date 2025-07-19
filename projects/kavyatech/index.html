@@ -24,7 +24,7 @@
             <span class="dash absolute"></span>
         </div>  
         <div class="spinner-container hide">
-            <div class="spinner-item-list" style="--quantity: 5;">
+            <div class="spinner-item-list" style="--quantity: 6;">
                 <a href="#home" class="btn spinner-item" style="--index: -1;">
                     <i class="material-icons spinner-item-icon">home</i>
                     <span>Home</span>
@@ -37,14 +37,19 @@
                     <i class="material-icons spinner-item-icon">volunteer_activism</i>
                     <span>Services</span>
                 </a>
-                <a href="#projects" class="btn spinner-item" style="--index: 2;">
+                <a href="#team" class="btn spinner-item" style="--index: 2;">
+                    <i class="material-icons spinner-item-icon">diversity_1</i>
+                    <span>Team</span>
+                </a>
+                <a href="#projects" class="btn spinner-item" style="--index: 3;">
                     <i class="material-icons spinner-item-icon">workspaces</i>
                     <span>Projects</span>
                 </a>
-                <a href="#contact" class="btn spinner-item" style="--index: 3;">
+                <a href="#contact" class="btn spinner-item" style="--index: 4;">
                     <i class="material-icons spinner-item-icon">mail</i>
                     <span>Contact</span>
                 </a>
+                
                 
             </div>
         </div>
@@ -59,8 +64,12 @@
                 <div class="home-content">
                     <div></div>
                     <h1 class="section-title">Transforming vision into product</h1>
+                    
                     <div class="connect">
-                        <a href="#contact" class="btn btn-cta">Contact us</a>
+                        <div class="flex flex-row">
+                            <a href="#contact" class="btn btn-cta">Contact us</a>
+                            <a href="#team" class="btn btn-cta ms-2" style="margin-left : 15px;">Our team</a>
+                        </div>
                         <div class="flex flex-row justify-content-center">                                
                             <a class="text-decoration-none" href="https://www.linkedin.com/in/vijayhamal/" target="_blank">
                                 <div class="social-icon-holder pointer">
@@ -187,6 +196,49 @@
                         <p>We manage, optimize, and secure small to large organizational data across SQL and NoSQL systems. Expertise includes SQL Server, MySQL, PostgreSQL, Google Sheets MongoDB with scripts for SQL and automation handled via Python or shell scripting.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+         <!-- <div class="tree" id="tree-container"></div> -->
+        <section id="team">
+            <div class="section-container">
+                <h1 class="section-title">TEAM</h1>
+                
+                <div class="row">
+                    <div class="team-container" id="team-container">
+                        <div class="middle-line"></div>
+                        
+
+                        <a class="team-item">
+                            <div class="curve-connector"></div>
+                            <div class="team-name">GANGA BHUJEL</div>
+                            <img class="team-image" src="assets/images/ganga.jpg">
+
+                            <div class="team-position">CHIEF EXECUTIVE OFFICER</div>
+                            <div class="team-subtitle">Founder</div>
+                        </a>
+
+                        <a class="team-item" href="https://www.vijayhamal.com.np/" target="_blank">
+                            <div class="curve-connector"></div>
+                            <div class="team-name">VIJAY HAMAL</div>
+                            <img class="team-image" src="assets/images/profile.jpg">
+
+                            <div class="team-position">Founder</div>
+                            <div class="team-subtitle">Senior Software Engineer</div>
+                        </a>
+
+                        <a class="team-item"  href="https://hamalsanjay.com.np/" target="_blank" >
+                            <div class="curve-connector"></div>
+                            <div class="team-name">SANJAY HAMAL</div>
+                            <img class="team-image" src="assets/images/sanjay.jpg">
+
+                            <div class="team-position">CHIEF DATA ANALYST</div>
+                            <div class="team-subtitle">Data Analyst</div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -318,3 +370,4 @@
 </body>
 <script type="module" src="assets/js/script.js?version=20250623.01"></script>
 </html>
+
